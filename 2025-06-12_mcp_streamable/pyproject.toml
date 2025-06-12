@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=64.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "github-mingzilla-py_poc"
+version = "0.1.0"
+description = "A Python project"
+authors = [
+    { name = "mingzilla", email = "contact@github.com/mingzilla" }
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    # API
+    "fastapi>=0.115.12",
+    "uvicorn>=0.34.2",
+    # Domain
+    "pydantic",
+    # DB
+    "SQLAlchemy",
+    "pymysql>=1.1.1",
+    # MCP
+    "mcp[cli]>=1.9.2",
+    # ENV
+    "python-dotenv>=1.1.0",
+    # OpenAI
+    "openai>=1.84.0",
+    "openai-agents>=0.0.17",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "black",
+    "isort",
+    "build",
+    "pre-commit"
+]  # Will be populated by uv add --dev
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+packages = [
+    "github_mingzilla",
+    "github_mingzilla.py_poc",
+]
+
+[tool.black]
+line-length = 999
+
+[tool.isort]
+profile = "black"
+line_length = 999
+sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+import_heading_stdlib = "Standard Library"
+import_heading_thirdparty = "Third Party"
+import_heading_firstparty = "First Party"
+import_heading_localfolder = "Local"
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "integration", "functional"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+pythonpath = [".", "src"]
