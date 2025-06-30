@@ -1,0 +1,78 @@
+[build-system]
+requires = ["setuptools>=64.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "github-mingzilla-api_link"
+version = "0.1.0"
+description = "API linking service"
+authors = [
+    {name = "mingzilla", email = "contact@github.com/mingzilla"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    # API
+    "fastapi>=0.115.12",
+    "uvicorn>=0.34.2",
+    "sse-starlette>=1.6.5",
+    # Domain
+    "pydantic>=2.11.0",
+    # DB
+    "sqlalchemy>=2.0.0",
+    "pymysql>=1.1.1",          # Keep for sync compatibility if needed
+    "aiomysql>=0.2.0",         # NEW: Required for async MySQL support
+    "instructor>=1.8.3",
+    # MCP
+    "mcp>=1.9.2",
+    # ENV
+    "python-dotenv>=1.1.0",
+    # OpenAI
+    "openai>=1.84.0",
+    "openai-agents>=0.0.17",
+] # Run: uv sync
+
+[dependency-groups]
+dev = [
+    "pytest-asyncio>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "black",
+    "isort",
+    "build",
+    "pre-commit"
+] # Run: uv sync --extra dev
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = [
+    "github_mingzilla",
+    "github_mingzilla.api_link",
+    "github_mingzilla.api_link.models",
+    "github_mingzilla.api_link.models.entities",
+    "github_mingzilla.api_link.core",
+    "github_mingzilla.api_link.api",
+    "github_mingzilla.api_link.services",
+    "github_mingzilla.api_link.utils",
+]
+
+[tool.black]
+line-length = 999
+
+[tool.isort]
+profile = "black"
+line_length = 999
+sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY"]
+skip_glob = ["*.venv/*", "build/*", "dist/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "integration", "functional"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+pythonpath = [".", "src"]
+asyncio_mode = "auto"

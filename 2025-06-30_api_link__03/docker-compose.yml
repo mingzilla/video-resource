@@ -1,0 +1,27 @@
+services:
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb_apps
+    environment:
+      MYSQL_ROOT_PASSWORD: 11112222
+      MYSQL_DATABASE: api_link
+      LANG: C.UTF-8
+    command: --lower_case_table_names=1 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --general-log-file=/var/logs/general.log
+    restart: "no"
+    ports:
+      - "11001:3306"
+    volumes:
+      - ./docker-volumes/db:/docker-entrypoint-initdb.d
+      - ./logs:/var/logs
+    healthcheck:
+      test: [ "CMD", "healthcheck.sh", "--connect", "--innodb_initialized" ]
+      interval: 2s
+      timeout: 2s
+      retries: 40
+      start_period: 10s
+    networks:
+      - shared-network
+
+networks:
+  shared-network:
+    external: true
