@@ -114,7 +114,7 @@ def save_to_db():  # snake_case Functions
       ├── data_processor/                  # Data processing project
       │   ├── controller/
       │   ├── services/
-      │   ├── repo/
+      │   ├── repositories/
       │   └── models/
       └── web_scraper/                     # Web scraping project
           ├── scrapers/
