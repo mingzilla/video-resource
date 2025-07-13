@@ -1,0 +1,35 @@
+# Lightweight pre-commit hooks configuration
+# Only essential formatting tools are enabled by default
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+    -   id: trailing-whitespace
+        exclude: '^(docker-volumes|load_testing_output)/.*'
+    -   id: end-of-file-fixer
+        exclude: '^.*\.(lock|min\.js|svg)$|^(docker-volumes|load_testing_output)/.*'
+    -   id: check-yaml
+        args: [--allow-multiple-documents]
+    -   id: check-added-large-files
+        args: ['--maxkb=1000']
+        exclude: '^(docker-volumes|load_testing_output)/.*'
+
+# Use Ruff for linting, formatting, and import sorting
+-   repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.11.13
+    hooks:
+    -   id: ruff
+        args: [--fix]
+        exclude: '^(docker-volumes|load_testing_output)/.*'
+    -   id: ruff-format
+        exclude: '^(docker-volumes|load_testing_output)/.*'
+
+# Check for relative imports
+-   repo: local
+    hooks:
+    -   id: no-relative-imports
+        name: Check for relative imports
+        entry: bash -c 'if grep -r "from \." src/; then echo "Relative imports found. Use absolute imports instead."; exit 1; fi'
+        language: system
+        pass_filenames: false
+        types: [python]
