@@ -132,10 +132,14 @@ def save_to_db():  # snake_case Functions
 
 ### 11. Avoid Base URL in Constructors
 ```python
-# ✅ Good - use Full URL in methods
+# ✅ Good - use Full URL in methods and config
 class MyClient:
     async def get(self, url: str, **kwargs):
         return await self.session.get(url, **kwargs)
+
+# ✅ Good - Full endpoint URLs in environment variables
+OLLAMA_EMBEDDING_URL = "http://192.168.1.209:11434/v1/embeddings"  # Can curl directly for debugging
+API_HEALTH_URL = "http://localhost:8000/api/v1/health"
 ```
 
 ```python
@@ -147,4 +151,7 @@ class MyClient:
     async def get_resource(self, path: str):
         # Hidden URL composition makes it harder to trace and test
         return await self.session.get(f"{self.base_url}/{path}")
+
+# ❌ Bad - Base URL requiring path concatenation
+OLLAMA_BASE_URL = "http://192.168.1.209:11434"  # Which endpoint? /api? /v1?
 ```
