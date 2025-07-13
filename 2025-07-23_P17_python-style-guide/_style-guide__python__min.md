@@ -112,9 +112,9 @@ def save_to_db():  # snake_case Functions
 ├── .venv/
 ├── src/github_mingzilla/
       ├── data_processor/                  # Data processing project
-      │   ├── processors/
-      │   ├── transformers/
+      │   ├── controller/
       │   ├── services/
+      │   ├── repo/
       │   └── models/
       └── web_scraper/                     # Web scraping project
           ├── scrapers/
