@@ -27,6 +27,9 @@ def connect(timeout=30): ...  # ❌ Bad
 ```python
 def connect(timeout: int) -> bool:  # ✅ Good
     """Timeout in seconds (30 recommended)."""
+
+def find_user(user_id: Optional[int]) -> User: # Good
+    """Caller must explicitly pass None or value."""
 ```
 
 #### 4. Class Design
