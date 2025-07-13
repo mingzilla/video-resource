@@ -1,4 +1,4 @@
-### 🧼 Python Style Guide (LLM-Optimized)
+### 🧼 Python Style Guide
 
 #### 1. Core Principles
 - Tooling handles formatting (Ruff/pre-commit)
