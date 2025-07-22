@@ -1,0 +1,2 @@
+Method,Name,Error,Occurrences
+POST,/api/v1/chat/stream,CatchResponseError('HTTP 0'),2
