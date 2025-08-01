@@ -54,8 +54,26 @@ asyncio.run(main())
 
 ## `gather()` compared to `TaskGroup`:
 
-| Aspect                     | `asyncio.gather()`                                                  | `asyncio.TaskGroup`                                                               |
-|----------------------------|---------------------------------------------------------------------|-----------------------------------------------------------------------------------|
-| **Automatic Cancellation** | No - other tasks continue running in background when one fails      | Yes - cancels remaining tasks when one fails                                      |
-| **Result Access**          | All-or-nothing results - you lose ALL results when any task fails   | Granular result access - preserve successful results even after group failure     |
-| **Resource Management**    | No automatic resource management - you must manually handle cleanup | Automatic resource management - context manager (`async with`) guarantees cleanup |
+| Aspect                                 | `asyncio.gather()` with `return_exceptions=True`          | `asyncio.TaskGroup`                                                               |
+|----------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------------------|
+| **Behaviour**                          | Wait for all, finish all, ignore failures                 | Wait for all. If error occurs, cancel unfinished tasks                            |
+| **Result Access**                      | Access success or failure results from the returned array | Granular result access - preserve successful results even after group failure     |
+| **Resource Management for task group** | None, all tasks are finished                              | Automatic resource management - context manager (`async with`) guarantees cleanup |
+| **Resource Management for each task**  | You must manually handle cleanup for each task            | You must manually handle cleanup for each task                                    |
+
+Resource Management for each task e.g. 
+
+```text
+# TaskGroup doesn't magically clean up YOUR resources
+async def task_with_resources():
+    connection = await db.connect()  # You still need try/finally!
+    try:
+        return await do_work(connection)
+    finally:
+        await connection.close()  # TaskGroup won't do this for you
+
+async with asyncio.TaskGroup() as tg:
+    task1 = tg.create_task(task_with_resources())  # Task must handle its own cleanup
+    task2 = tg.create_task(another_task())
+# TaskGroup manages the group, not the individual task resources
+```

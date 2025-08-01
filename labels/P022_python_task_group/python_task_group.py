@@ -167,6 +167,33 @@ async def run_with_gather_hates_a():
     print(f"Results: {results[0]}, {results[1]}, {results[2]}")
 
 
+async def run_with_gather_hates_a__wait_for_and_ignore_failures():
+    print("run_with_gather_hates_a - properly wait for all tasks to finish")
+
+    start_time = time.time()
+
+    gathered_results = await asyncio.gather(
+        worker_task_hates_a("A", 1, start_time),
+        worker_task_hates_a("B", 2, start_time),
+        worker_task_hates_a("C", 0.5, start_time),
+        return_exceptions=True # IMPORTANT! turns errors into results, so that `gather` can wait for all tasks to finish
+    )
+
+    total_elapsed = time.time() - start_time
+    print(f"All tasks completed after {total_elapsed:.2f}s")
+
+    results = []
+    if gathered_results:  # gather() limitation - since one of them failed, you cannot have a variable to store the value returned by C
+        # gather() succeeded - we have all results
+        for result in gathered_results:
+            results.append(result)
+    else:
+        # gather() failed - we lose all partial results
+        results = ["Lost due to exception", "Lost due to exception", "Lost due to exception"]
+
+    print(f"Results: {results[0]}, {results[1]}, {results[2]}")
+
+
 if __name__ == "__main__":
     # 1 same result
     asyncio.run(run_with_task_group())
@@ -184,6 +211,8 @@ if __name__ == "__main__":
     asyncio.run(run_with_task_group_hates_a())
 
     # 4 get each item
-    asyncio.run(run_with_task_group_hates_a())
+    asyncio.run(run_with_task_group_hates_a()) # usage of taskgroup
     print("\n\n")
     asyncio.run(run_with_gather_hates_a())
+    print("\n\n")
+    asyncio.run(run_with_gather_hates_a__wait_for_and_ignore_failures()) # proper usage of gather
