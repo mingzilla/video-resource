@@ -45,6 +45,7 @@ class Database:
 1. Logic has no service dependencies (DB/API calls)
 2. Only operates on input parameters
 3. Has clear single responsibility
+4. NEVER put static method logic in a service. If the logic is static e.g. pure computation, don't make a class method in a service. Put it in a util class as a static method
 
 **Example:**
 ```python
