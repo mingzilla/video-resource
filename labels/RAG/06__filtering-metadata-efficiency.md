@@ -74,6 +74,17 @@ Note - Easy to: Find all with `payload.filterableAttributes.cpu = "i9"`
 - 3rd: Search (since filter first, top 5 is a lot more relevant, and faster to query)
 - "vector" - vectors for the user query
 - "filterableAttributes.hard_drive" - recommendation: change "Hard Drive" to "hard_drive"
+    - convert all non-alphanumeric characters into "_", then lower case text
+    - treat "Hard Drive" and "hard+Drive" the same in filters
+
+```text
+  # Examples:
+  "Video Card" -> "video_card"
+  "Video+Card" -> "video_card"
+  "video Card" -> "video_card"
+  "RAM/Memory" -> "ram_memory"
+  "Screen-Size" -> "screen_size"
+```
 
 ### 2.1. Use `AND`/`must`
 
