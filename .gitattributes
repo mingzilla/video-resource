@@ -1,0 +1,10 @@
+# Use global config handles the rest
+* text=auto
+
+# Binary files (important to specify)
+*.png binary
+*.jpg binary
+*.jar binary
+*.exe binary
+*.dll binary
+*.so binary
