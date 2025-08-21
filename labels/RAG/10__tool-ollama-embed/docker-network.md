@@ -3,7 +3,7 @@
 ```yaml
 services:
   ollama:
-    image: mingzilla/ollama-nomic-embed:1.0.2
+    image: mingzilla/ollama-nomic-embed:1.0.3
     container_name: ollama-service
     network_mode: "host"  # ← This is the key change
     # Remove the ports section - not needed and CANNOT REMAP with host networking

@@ -1,6 +1,6 @@
 services:
   ollama:
-    image: mingzilla/ollama-nomic-embed:1.0.2
+    image: mingzilla/ollama-nomic-embed:1.0.3
     container_name: ollama-service
     ports:
       - "11435:11434"
