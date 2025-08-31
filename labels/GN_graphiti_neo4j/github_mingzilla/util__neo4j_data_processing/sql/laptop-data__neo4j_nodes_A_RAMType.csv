@@ -1,0 +1,7 @@
+"id:ID","capacityGB","createdAt","normalized","originalRaw","variations",":LABEL"
+"ram_type_32gb","32","2025-07-31T22:07:41.387885","32GB","32G","32G;32GB;32 GB;32g;32 G","A_RAMType"
+"ram_type_16gb","16","2025-07-31T22:07:41.388889","16GB","16GB","16GB;16G;16 G;16 GB","A_RAMType"
+"ram_type_64gb","64","2025-07-31T22:07:41.388889","64GB","64G","64G;64GB;64 G;64 GB","A_RAMType"
+"ram_type_24gb","24","2025-07-31T22:07:41.391912","24GB","24GB","24GB","A_RAMType"
+"ram_type_8gb","8","2025-07-31T22:07:41.391912","8GB","8G","8G;8GB;8 GB","A_RAMType"
+"ram_type_128gb","128","2025-07-31T22:07:41.392918","128GB","128GB","128GB;128G;128 GB","A_RAMType"

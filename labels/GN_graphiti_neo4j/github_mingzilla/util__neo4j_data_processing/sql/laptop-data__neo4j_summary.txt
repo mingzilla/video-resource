@@ -1,0 +1,44 @@
+Neo4j CSV Generation Summary
+========================================
+
+Base filename: laptop-data
+Output directory: github_mingzilla/util__neo4j_data_processing/sql
+Generated at: 2025-07-31T22:07:41.437049
+
+Graph Model Statistics:
+  Total nodes: 1194
+  Total relationships: 2775
+
+Node breakdown:
+  A_CPUType: 4
+  A_GPUType: 4
+  A_RAMType: 6
+  D_LaptopSpec: 545
+  E_Laptop: 545
+  V_Brand: 90
+
+Relationship breakdown:
+  CONTAINS_D: 555
+  HAS_A_CPU: 555
+  HAS_A_GPU: 555
+  HAS_A_RAM: 555
+  HAS_V_BRAND: 555
+
+Generated files:
+  import_script: laptop-data__neo4j_import.cypher
+  nodes_A_CPUType: laptop-data__neo4j_nodes_A_CPUType.csv
+  nodes_A_GPUType: laptop-data__neo4j_nodes_A_GPUType.csv
+  nodes_A_RAMType: laptop-data__neo4j_nodes_A_RAMType.csv
+  nodes_D_LaptopSpec: laptop-data__neo4j_nodes_D_LaptopSpec.csv
+  nodes_E_Laptop: laptop-data__neo4j_nodes_E_Laptop.csv
+  nodes_V_Brand: laptop-data__neo4j_nodes_V_Brand.csv
+  rels_CONTAINS_D: laptop-data__neo4j_rels_CONTAINS_D.csv
+  rels_HAS_A_CPU: laptop-data__neo4j_rels_HAS_A_CPU.csv
+  rels_HAS_A_GPU: laptop-data__neo4j_rels_HAS_A_GPU.csv
+  rels_HAS_A_RAM: laptop-data__neo4j_rels_HAS_A_RAM.csv
+  rels_HAS_V_BRAND: laptop-data__neo4j_rels_HAS_V_BRAND.csv
+
+Import Instructions:
+1. Copy all CSV files to Neo4j import directory
+2. Run: cypher-shell -f laptop-data__neo4j_import.cypher
+3. Verify import with summary queries at end of script

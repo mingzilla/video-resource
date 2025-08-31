@@ -1,0 +1,16 @@
+services:
+  neo4j__1__laptops:
+    image: neo4j:2025.05.1
+    container_name: neo4j__1__laptops
+    ports:
+      - "17474:7474"  # HTTP
+      - "17687:7687"  # Bolt
+    volumes:
+      - ./docker-volumes/1__laptops/data:/data
+      - ./docker-volumes/1__laptops/logs:/logs
+      - ./docker-volumes/1__laptops/import:/var/lib/neo4j/import
+      - ./docker-volumes/1__laptops/plugins:/plugins
+    environment:
+      - NEO4J_AUTH=neo4j/test1234
+      - NEO4J_PLUGINS=["apoc"]  # APOC plugin - to be able to do csv import
+    restart: unless-stopped

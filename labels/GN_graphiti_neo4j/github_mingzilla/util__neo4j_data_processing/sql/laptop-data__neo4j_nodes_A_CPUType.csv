@@ -1,0 +1,5 @@
+"id:ID","createdAt","normalized","originalRaw","variations",":LABEL"
+"cpu_type_i9","2025-07-31T22:07:41.387885","i9","i9","i9;Intel i9;I9;Intel Core i9;intel core i9;I 9;Intel I9;i 9;Intel Core I9;intel i9","A_CPUType"
+"cpu_type_i7","2025-07-31T22:07:41.388889","i7","I7","I7;i7;Intel i7;Intel Core i7;i 7;Intel Core I7;I 7;intel i7","A_CPUType"
+"cpu_type_i5","2025-07-31T22:07:41.388889","i5","i5","i5;I5;Intel i5;intel i5;i 5;I 5","A_CPUType"
+"cpu_type_i3","2025-07-31T22:07:41.396934","i3","i3","i3;I3;Intel i3;intel i3;I 3","A_CPUType"
