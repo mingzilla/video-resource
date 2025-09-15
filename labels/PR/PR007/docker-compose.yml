@@ -1,0 +1,52 @@
+services:
+  all-minilm-embeddings: # DO NOT rename, service name is used by EnvVarDefaults
+    image: mingzilla/api_all-minilm-l6-v2:1.0.1
+    container_name: system-embeddings
+    ports:
+      - "40101:8000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+    restart: no
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  qdrant: # DO NOT rename, service name is used by EnvVarDefaults
+    image: qdrant/qdrant:v1.15.3
+    container_name: system-qdrant
+    ports:
+      - "41111:6333"
+      - "41112:6334"
+    environment:
+      - QDRANT__SERVICE__HTTP_PORT=6333
+      - QDRANT__SERVICE__GRPC_PORT=6334
+    restart: no
+
+  system:
+    image: mingzilla/system:2025-07-1.0.4
+    container_name: system
+    ports:
+      - "41100:41100"
+      - "41101:41100"
+    environment:
+      - RUNTIME_ENV=PROD
+      - PYTHONPATH=/app/src
+    depends_on:
+      all-minilm-embeddings:
+        condition: service_healthy
+      qdrant:
+        condition: service_started
+    restart: no
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:41100/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 120s  # Allow time for initialization
+
+networks:
+  default:
+    driver: bridge
