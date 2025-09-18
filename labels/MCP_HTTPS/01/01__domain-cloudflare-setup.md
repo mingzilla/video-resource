@@ -18,8 +18,10 @@
 - https://www.whatsmydns.net/#A/mingzillastudio.co.uk
 
 ```shell
+sudo apt-get update
+sudo apt-get install whois
+
 whois mingzillastudio.co.uk
 ```
 
-### Verify Results 2
 - https://dash.cloudflare.com/9eeb20c19e6f5160a1231beb6d80fa4d/mingzillastudio.co.uk/dns/records
