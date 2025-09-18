@@ -4,7 +4,7 @@ services:
     container_name: traefik
     command:
       - "--api.dashboard=true"
-      - "--api.insecure=true"
+      - "--api.insecure=${EXPOSE_DASHBOARD_WITHOUT_PASSWORD}"
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
       - "--entrypoints.tunnel.address=:80"
