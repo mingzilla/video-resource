@@ -1,0 +1,37 @@
+services:
+  traefik:
+    image: traefik:v2.10
+    container_name: traefik
+    command:
+      - "--api.dashboard=true"
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.tunnel.address=:80"
+      - "--entrypoints.api.address=:8081"
+      - "--log.level=INFO"
+    ports:
+      - "8081:8081"  # Traefik dashboard (for debugging) - changed to avoid conflict
+      - "80:80"      # Main HTTP entrypoint (for debugging)
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    restart: no
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.traefik.rule=Host(`traefik.${MAIN_DOMAIN}`)"
+      - "traefik.http.routers.traefik.entrypoints=tunnel"
+      - "traefik.http.routers.traefik.service=api@internal"
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared
+    command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TUNNEL_TOKEN}
+    depends_on:
+      - traefik
+    restart: no
+    environment:
+      - TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN}
+
+networks:
+  default:
+    driver: bridge

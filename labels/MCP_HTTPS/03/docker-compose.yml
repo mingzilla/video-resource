@@ -1,0 +1,73 @@
+include:
+  - ./general/docker-compose.gateway.yml
+
+services:
+  all-minilm-embeddings: # DO NOT rename, service name is used by EnvVarDefaults
+    image: mingzilla/api_all-minilm-l6-v2:1.0.1
+    container_name: all-minilm-embeddings
+    ports:
+      - "40101:8000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+    restart: no
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  qdrant: # DO NOT rename, service name is used by EnvVarDefaults
+    image: qdrant/qdrant:v1.15.3
+    container_name: qdrant
+    ports:
+      - "41111:6333"
+      - "41112:6334"
+    environment:
+      - QDRANT__SERVICE__HTTP_PORT=6333
+      - QDRANT__SERVICE__GRPC_PORT=6334
+    restart: no
+    networks:
+      - gateway_network
+
+  app1:
+    image: mingzilla/app1:1.0.0
+    container_name: app1
+    ports: # Keep for direct access if needed
+      - "41100:41100" # API
+      - "41101:41101" # MCP
+    environment:
+      - RUNTIME_ENV=PROD
+      - CONTAINER_MODE=true
+      - PYTHONPATH=/app/src
+      - SCHEMA_QDRANT_URL=http://qdrant:6333 # needed because 014_qdrant_collection_creation.sh does not use python
+    depends_on:
+      all-minilm-embeddings:
+        condition: service_healthy
+      qdrant:
+        condition: service_started
+      traefik:
+        condition: service_started
+    restart: no
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:41100/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 120s  # Allow time for initialization
+    labels:
+      - "traefik.enable=true"
+      # API routing
+      - "traefik.http.routers.app1-api.rule=Host(`app1-api.${MAIN_DOMAIN}`)"
+      - "traefik.http.routers.app1-api.entrypoints=tunnel"
+      - "traefik.http.routers.app1-api.service=app1-api-svc"
+      - "traefik.http.services.app1-api-svc.loadbalancer.server.port=41100"
+      # MCP routing
+      - "traefik.http.routers.app1-mcp.rule=Host(`app1-mcp.${MAIN_DOMAIN}`)"
+      - "traefik.http.routers.app1-mcp.entrypoints=tunnel"
+      - "traefik.http.routers.app1-mcp.service=app1-mcp-svc"
+      - "traefik.http.services.app1-mcp-svc.loadbalancer.server.port=41101"
+
+networks:
+  default:
+    driver: bridge
