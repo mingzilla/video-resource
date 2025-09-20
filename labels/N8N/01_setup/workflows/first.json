@@ -1,0 +1,212 @@
+[
+  {
+    "createdAt": "2025-09-20T09:33:19.494Z",
+    "updatedAt": "2025-09-20T11:57:03.000Z",
+    "id": "fSPRmWxE1S4kbhVt",
+    "name": "data-city-example",
+    "active": false,
+    "isArchived": false,
+    "nodes": [
+      {
+        "parameters": {
+          "options": {}
+        },
+        "id": "b24b05a7-d802-4413-bfb1-23e1e76f6203",
+        "name": "When chat message received",
+        "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+        "typeVersion": 1.1,
+        "position": [
+          368,
+          32
+        ],
+        "webhookId": "a889d2ae-2159-402f-b326-5f61e90f602e"
+      },
+      {
+        "parameters": {
+          "options": {}
+        },
+        "id": "d5e60eb2-267c-4f68-aefe-439031bcaceb",
+        "name": "OpenAI Model",
+        "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+        "typeVersion": 1,
+        "position": [
+          400,
+          240
+        ],
+        "credentials": {
+          "openAiApi": {
+            "id": "T4HHF2COl5ygkiZO",
+            "name": "OpenAi account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "promptType": "define",
+          "text": "={{ $json.chatInput }}",
+          "options": {
+            "systemMessage": "=Proactively use \"schema-info\" and \"company-search\" mcp servers, especially when asked if there is certain info in our system.\nToken: XXXXXXXX"
+          }
+        },
+        "id": "41174c8a-6ac8-42bd-900e-ca15196600c5",
+        "name": "Agent",
+        "type": "@n8n/n8n-nodes-langchain.agent",
+        "typeVersion": 1.7,
+        "position": [
+          592,
+          32
+        ]
+      },
+      {
+        "parameters": {},
+        "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+        "typeVersion": 1.3,
+        "position": [
+          544,
+          240
+        ],
+        "id": "a9b10db9-9b68-497a-9596-496eab0938fd",
+        "name": "Simple Memory"
+      },
+      {
+        "parameters": {
+          "endpointUrl": "https://app1-mcp.example.com/mcp",
+          "serverTransport": "httpStreamable",
+          "authentication": "bearerAuth",
+          "include": "selected",
+          "includeTools": [
+            "search_schemas"
+          ],
+          "options": {}
+        },
+        "type": "@n8n/n8n-nodes-langchain.mcpClientTool",
+        "typeVersion": 1.1,
+        "position": [
+          704,
+          240
+        ],
+        "id": "8aabbaba-7b26-4a9f-b14d-dfdc1cbfff4d",
+        "name": "MCP - Schema Info",
+        "credentials": {
+          "httpBearerAuth": {
+            "id": "bNMQeGX5iyYUrcKk",
+            "name": "Bearer - Data"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "endpointUrl": "https://app2-mcp.example.com/mcp",
+          "serverTransport": "httpStreamable",
+          "authentication": "bearerAuth",
+          "include": "selected",
+          "includeTools": [
+            "search_companies"
+          ],
+          "options": {}
+        },
+        "type": "@n8n/n8n-nodes-langchain.mcpClientTool",
+        "typeVersion": 1.1,
+        "position": [
+          848,
+          240
+        ],
+        "id": "5ee6e497-d2b6-4af7-af08-5b881a1e2ca3",
+        "name": "MCP - Company Search",
+        "credentials": {
+          "httpBearerAuth": {
+            "id": "bNMQeGX5iyYUrcKk",
+            "name": "Bearer - Data"
+          }
+        }
+      }
+    ],
+    "connections": {
+      "When chat message received": {
+        "main": [
+          [
+            {
+              "node": "Agent",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "OpenAI Model": {
+        "ai_languageModel": [
+          [
+            {
+              "node": "Agent",
+              "type": "ai_languageModel",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Simple Memory": {
+        "ai_memory": [
+          [
+            {
+              "node": "Agent",
+              "type": "ai_memory",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "MCP - Schema Info": {
+        "ai_tool": [
+          [
+            {
+              "node": "Agent",
+              "type": "ai_tool",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "MCP - Company Search": {
+        "ai_tool": [
+          [
+            {
+              "node": "Agent",
+              "type": "ai_tool",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "settings": {
+      "executionOrder": "v1"
+    },
+    "staticData": null,
+    "meta": {
+      "templateId": "self-building-ai-agent",
+      "templateCredsSetupCompleted": true
+    },
+    "pinData": {},
+    "versionId": "b49c06ca-d5c3-416d-aefa-68099b54a898",
+    "triggerCount": 0,
+    "tags": [],
+    "shared": [
+      {
+        "createdAt": "2025-09-20T10:52:37.878Z",
+        "updatedAt": "2025-09-20T10:52:37.878Z",
+        "role": "workflow:owner",
+        "workflowId": "fSPRmWxE1S4kbhVt",
+        "projectId": "LP0ilzmFdHO9mKLd",
+        "project": {
+          "createdAt": "2025-09-20T10:52:28.790Z",
+          "updatedAt": "2025-09-20T10:54:09.477Z",
+          "id": "LP0ilzmFdHO9mKLd",
+          "name": "admin admin <admin@localhost.com>",
+          "type": "personal",
+          "icon": null,
+          "description": null
+        }
+      }
+    ]
+  }
+]
