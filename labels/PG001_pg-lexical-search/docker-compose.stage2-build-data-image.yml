@@ -1,0 +1,42 @@
+services:
+  # Temporary PostgreSQL instance for data population (will be committed to image)
+  company-lexical-search-build-data-db:
+    image: postgres:16
+    container_name: company-lexical-search-build-data-db
+    # CRITICAL: NO VOLUMES - data becomes part of the committed image
+    ports:
+      - "41331:5432"
+    environment:
+      - POSTGRES_DB=lexical
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d lexical"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+
+  # Data populator service - loads lexical data to PostgreSQL
+  company-lexical-search-build-data-runner:
+    image: mingzilla/company-lexical-search-build-data-runner:latest
+    build:
+      context: .
+      dockerfile: Dockerfile_stage2_data
+    container_name: company-lexical-search-build-data-runner
+    depends_on:
+      company-lexical-search-build-data-db:
+        condition: service_healthy
+    environment:
+      - RUNTIME_ENV=PROD
+      - PYTHONPATH=/app/src
+      - LEXICAL_PG_HOST=company-lexical-search-build-data-db
+      - LEXICAL_PG_PORT=5432
+    volumes:
+      # Mount input directory for reading source data
+      - ../_app-data/_active/app_input_data:/app_input_data
+
+# NO volumes section - data stays inside container filesystem for immutable image
+networks:
+  default:
+    driver: bridge

@@ -1,0 +1,5 @@
+- Performance - compared to qdrant
+- `CREATE EXTENSION IF NOT EXISTS pg_trgm`
+- INDEX: city, active, company_number
+- building docker
+- size: 10G vs 28G
