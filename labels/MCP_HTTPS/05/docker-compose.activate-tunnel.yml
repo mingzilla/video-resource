@@ -1,0 +1,15 @@
+# Run this to:
+# 1. activate the INACTIVE tunnel - so that you can start the migration on the UI
+# 2. include cloudflared-config.yml, so that when running migration, it creates routes without manual creation
+services:
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared-activate-tunnel
+    command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TUNNEL_TOKEN}
+    volumes:
+      - ./cloudflared-config.yml:/etc/cloudflared/config.yml:ro
+    restart: no
+
+networks:
+  default:
+    driver: bridge

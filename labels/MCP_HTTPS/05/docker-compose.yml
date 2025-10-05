@@ -1,0 +1,60 @@
+services:
+  ## HTTPS
+  traefik:
+    image: traefik:v2.10
+    container_name: traefik
+    command:
+      - "--api.dashboard=true"
+      - "--api.insecure=${EXPOSE_DASHBOARD_WITHOUT_PASSWORD}"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.tunnel.address=:80"
+      - "--entrypoints.api.address=:8081"
+      - "--log.level=INFO"
+    ports:
+      - "8081:8081"  # Traefik dashboard (for debugging) - changed to avoid conflict
+      - "80:80"      # Main HTTP entrypoint (for debugging)
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    restart: no
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.traefik.rule=Host(`home-traefik.${MAIN_DOMAIN}`)"
+      - "traefik.http.routers.traefik.entrypoints=tunnel"
+      - "traefik.http.routers.traefik.service=api@internal"
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared
+    command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TUNNEL_TOKEN}
+    depends_on:
+      - traefik
+    restart: no
+    environment:
+      - TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN}
+  ######################################################################################
+
+  my-service-engine:
+    image: my-service-engine:1.0.0
+    container_name: my-service-engine
+    depends_on:
+      traefik:
+        condition: service_started
+    restart: no
+    labels:
+      - "traefik.enable=true"
+      # API routing
+      - "traefik.http.routers.home-my-service-api.rule=Host(`home-my-service-api.${MAIN_DOMAIN}`)"
+      - "traefik.http.routers.home-my-service-api.entrypoints=tunnel"
+      - "traefik.http.routers.home-my-service-api.service=home-my-service-api-svc"
+      - "traefik.http.services.home-my-service-api-svc.loadbalancer.server.port=41400"
+      # MCP routing
+      - "traefik.http.routers.home-my-service-mcp.rule=Host(`home-my-service-mcp.${MAIN_DOMAIN}`)"
+      - "traefik.http.routers.home-my-service-mcp.entrypoints=tunnel"
+      - "traefik.http.routers.home-my-service-mcp.service=home-my-service-mcp-svc"
+      - "traefik.http.services.home-my-service-mcp-svc.loadbalancer.server.port=41401"
+  ######################################################################################
+
+networks:
+  default:
+    driver: bridge

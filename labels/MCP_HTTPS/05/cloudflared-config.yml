@@ -1,0 +1,8 @@
+ingress:
+  - hostname: home-traefik.my-domain.co.uk
+    service: http://traefik:80
+  - hostname: home-my-service-api.my-domain.co.uk
+    service: http://my-service-engine:41400
+  - hostname: home-my-service-mcp.my-domain.co.uk
+    service: http://my-service-engine:41401
+  - service: http_status:404
