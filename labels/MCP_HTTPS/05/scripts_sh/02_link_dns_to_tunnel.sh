@@ -10,17 +10,21 @@ TUNNEL_NAME="$TUNNEL_NAME"
 MAIN_DOMAIN="$MAIN_DOMAIN"
 CLOUDFLARED_TOKEN="$CLOUDFLARED_TOKEN"
 
-cloudflared::validate_installation
-cloudflared::validate_tunnel_existence "$TUNNEL_NAME"
+cloudflared::validate::installation
+cloudflared::validate::tunnel_existence "$TUNNEL_NAME"
 
 echo "Creating DNS records..."
 echo "=================================================="
 
-cloudflared::create_or_update_cname "$CLOUDFLARED_TOKEN" "$MAIN_DOMAIN" "$TUNNEL_NAME" "home-traefik"
-cloudflared::create_or_update_cname "$CLOUDFLARED_TOKEN" "$MAIN_DOMAIN" "$TUNNEL_NAME" "home-my-service-api"
-cloudflared::create_or_update_cname "$CLOUDFLARED_TOKEN" "$MAIN_DOMAIN" "$TUNNEL_NAME" "home-my-service-mcp"
+cloudflared::dns::cname::create_or_update "$CLOUDFLARED_TOKEN" "$MAIN_DOMAIN" "$TUNNEL_NAME" "home-traefik"
+cloudflared::dns::cname::create_or_update "$CLOUDFLARED_TOKEN" "$MAIN_DOMAIN" "$TUNNEL_NAME" "home-schema-info-api"
+cloudflared::dns::cname::create_or_update "$CLOUDFLARED_TOKEN" "$MAIN_DOMAIN" "$TUNNEL_NAME" "home-schema-info-mcp"
+cloudflared::dns::cname::create_or_update "$CLOUDFLARED_TOKEN" "$MAIN_DOMAIN" "$TUNNEL_NAME" "home-company-search-api"
+cloudflared::dns::cname::create_or_update "$CLOUDFLARED_TOKEN" "$MAIN_DOMAIN" "$TUNNEL_NAME" "home-company-search-mcp"
+cloudflared::dns::cname::create_or_update "$CLOUDFLARED_TOKEN" "$MAIN_DOMAIN" "$TUNNEL_NAME" "home-rtic-checker-api"
+cloudflared::dns::cname::create_or_update "$CLOUDFLARED_TOKEN" "$MAIN_DOMAIN" "$TUNNEL_NAME" "home-rtic-checker-mcp"
 
 echo "DNS records created successfully!"
 echo "Note: CNAME config takes about 15 minutes to propagate. To ensure valid config, visit"
 echo "https://www.whatsmydns.net/"
-echo "Search e.g. home-my-service-mcp.$MAIN_DOMAIN"
+echo "Search e.g. home-rtic-checker-mcp.$MAIN_DOMAIN"

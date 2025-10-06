@@ -24,6 +24,8 @@ cmd::validate_required() {
     fi
 }
 
+# ============================================
+
 cloudflared::source_env() {
     cmd::source_env "$1"
     echo "MAIN_DOMAIN: $MAIN_DOMAIN"
@@ -31,7 +33,7 @@ cloudflared::source_env() {
     echo "EXPOSE_DASHBOARD_WITHOUT_PASSWORD: $EXPOSE_DASHBOARD_WITHOUT_PASSWORD"
 }
 
-cloudflared::validate_installation() {
+cloudflared::validate::installation() {
     echo "🔎 Checking for 'cloudflared' command..."
     if ! command -v cloudflared &> /dev/null; then
         echo "❌ Error: 'cloudflared' is not installed. Please install it and re-run."
@@ -41,7 +43,7 @@ cloudflared::validate_installation() {
     echo "✅ 'cloudflared' is installed."
 }
 
-cloudflared::validate_tunnel_existence() {
+cloudflared::validate::tunnel_existence() {
     local tunnel_name="$1"
     if ! cloudflared tunnel list | grep -q "$tunnel_name"; then
         echo "Error: Tunnel '$tunnel_name' not found. Please run 01_tunnel_setup.sh first."
@@ -49,7 +51,7 @@ cloudflared::validate_tunnel_existence() {
     fi
 }
 
-cloudflared::find_or_create_cert() {
+cloudflared::cert::find_or_create() {
     if [ -f "$HOME/.cloudflared/cert.pem" ]; then
         echo "🔐 Already logged in to Cloudflare."
     else
@@ -61,7 +63,9 @@ cloudflared::find_or_create_cert() {
     fi
 }
 
-cloudflared::find_or_create_tunnel() {
+# ============================================
+
+cloudflared::tunnel::find_or_create() {
     local tunnel_name="$1"
     echo "🚇 Checking for Cloudflare Tunnel named '$tunnel_name'..."
 
@@ -75,7 +79,7 @@ cloudflared::find_or_create_tunnel() {
     fi
 }
 
-cloudflared::get_tunnel_token() {
+cloudflared::tunnel::get_token() {
     local tunnel_name="$1"
     echo "🔑 Retrieving the token for '$tunnel_name'..." >&2 # `>&2` avoids mixing this output with the token to be returned at the end
     cmd::validate_required "$tunnel_name" "Please supply tunnel name"
@@ -86,7 +90,7 @@ cloudflared::get_tunnel_token() {
     echo "$token"
 }
 
-cloudflared::set_tunnel_token_to_dotenv() {
+cloudflared::tunnel::set_token_to_dotenv() {
     local tunnel_name="$1"
     local env_file="$2"
     cmd::validate_required "$tunnel_name" "Please supply tunnel name"
@@ -96,7 +100,7 @@ cloudflared::set_tunnel_token_to_dotenv() {
         return 1
     fi
 
-    local token=$(cloudflared::get_tunnel_token "$tunnel_name")
+    local token=$(cloudflared::tunnel::get_token "$tunnel_name")
     cmd::validate_required "$token" "Failed to get a new tunnel token."
 
     # If not in file, add to end of file. If it's in file, delete it, add to end of file. Create .tmp because sh cannot read/write same file at the same time
@@ -115,10 +119,10 @@ cloudflared::set_tunnel_token_to_dotenv() {
     echo "✅ Successfully set CLOUDFLARE_TUNNEL_TOKEN in $env_file."
 }
 
-cloudflared::activate_tunnel_with_config() {
+cloudflared::tunnel::activate_with_config() {
     local tunnel_name="$1"
 
-    export CLOUDFLARE_TUNNEL_TOKEN=$(cloudflared::get_tunnel_token "$tunnel_name") # env var for docker compose yml file
+    export CLOUDFLARE_TUNNEL_TOKEN=$(cloudflared::tunnel::get_token "$tunnel_name") # env var for docker compose yml file
     echo "$CLOUDFLARE_TUNNEL_TOKEN"
 
     docker compose -f docker-compose.activate-tunnel.yml up -d
@@ -133,7 +137,7 @@ cloudflared::activate_tunnel_with_config() {
     echo ""
 }
 
-cloudflared::get_tunnel_url() {
+cloudflared::tunnel::get_url() {
     local tunnel_name="$1"
 
     tunnel_id=$(cloudflared tunnel list | grep "$tunnel_name" | awk '{print $1}')
@@ -147,11 +151,11 @@ cloudflared::get_tunnel_url() {
     echo "$tunnel_url"
 }
 
-cloudflared::show_tunnel_url_and_cname_config_instructions() {
+cloudflared::tunnel::show_url_and_cname_config_instructions() {
     local tunnel_name="$1"
     echo "🌐 Retrieving the Tunnel URL for '$tunnel_name'..."
 
-    local tunnel_url=$(cloudflared::get_tunnel_url "$tunnel_name")
+    local tunnel_url=$(cloudflared::tunnel::get_url "$tunnel_name")
 
     echo ""
     echo "======================================================================"
@@ -168,8 +172,10 @@ cloudflared::show_tunnel_url_and_cname_config_instructions() {
     echo ""
 }
 
+# ============================================
+
 # Usage: cloudflared::create_cname_and_tunnel_route "$TUNNEL_NAME" "$MAIN_DOMAIN" "example-subdomain"
-# This should work. If it doesn't in the future, use cloudflared::create_cname
+# This should work. If it doesn't in the future, use cloudflared::dns::cname::create
 cloudflared::create_cname_and_tunnel_route() {
     local tunnel_name="$1"
     local main_domain="$2"
@@ -178,7 +184,9 @@ cloudflared::create_cname_and_tunnel_route() {
     echo "Created: https://$cname.$main_domain"
 }
 
-cloudflared::get_zone_id() {
+# ============================================
+
+cloudflared::dns::get_zone_id() {
     local cloudflare_token="$1"
     local domain_name="$2"
     cmd::validate_required "$cloudflare_token" "Cloudflare API token must be provided"
@@ -197,14 +205,14 @@ cloudflared::get_zone_id() {
     echo "$zone_id"
 }
 
-cloudflared::find_cname_record_id() {
+cloudflared::dns::cname::find_record_id() {
     local cloudflare_token="$1"
     local main_domain="$2"
     local cname_subdomain="$3"
     cmd::validate_required "$cloudflare_token" "Cloudflare API token must be provided"
 
     local full_record_name="$cname_subdomain.$main_domain"
-    local zone_id=$(cloudflared::get_zone_id "$cloudflare_token" "$main_domain")
+    local zone_id=$(cloudflared::dns::get_zone_id "$cloudflare_token" "$main_domain")
 
     local record_response
     record_response=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/$zone_id/dns_records?type=CNAME&name=$full_record_name" \
@@ -216,7 +224,7 @@ cloudflared::find_cname_record_id() {
 }
 
 # Usage: #cloudflared::create_cname_and_tunnel_route "$TUNNEL_NAME" "$MAIN_DOMAIN" "example-subdomain"
-cloudflared::create_cname() {
+cloudflared::dns::cname::create() {
     local cloudflare_token="$1"
     local main_domain="$2"
     local tunnel_name="$3"
@@ -224,8 +232,8 @@ cloudflared::create_cname() {
     cmd::validate_required "$cloudflare_token" "Cloudflare API token must be provided"
 
     local full_record_name="$cname_subdomain.$main_domain"
-    local zone_id=$(cloudflared::get_zone_id "$cloudflare_token" "$main_domain")
-    local tunnel_url=$(cloudflared::get_tunnel_url "$tunnel_name")
+    local zone_id=$(cloudflared::dns::get_zone_id "$cloudflare_token" "$main_domain")
+    local tunnel_url=$(cloudflared::tunnel::get_url "$tunnel_name")
 
     local json_payload
     json_payload=$(printf '{"type":"CNAME","name":"%s","content":"%s","proxied":true}' "$full_record_name" "$tunnel_url")
@@ -240,8 +248,8 @@ cloudflared::create_cname() {
 
 # Updates an existing CNAME record with a new tunnel URL.
 # Fails if the record does not exist.
-# Usage: cloudflared::update_cname <api_token> <main_domain> <tunnel_name> <cname_subdomain>
-cloudflared::update_cname() {
+# Usage: cloudflared::dns::cname::update <api_token> <main_domain> <tunnel_name> <cname_subdomain>
+cloudflared::dns::cname::update() {
     local cloudflare_token="$1"
     local main_domain="$2"
     local tunnel_name="$3"
@@ -249,9 +257,9 @@ cloudflared::update_cname() {
     cmd::validate_required "$cloudflare_token" "Cloudflare API token must be provided"
 
     local full_record_name="$cname_subdomain.$main_domain"
-    local zone_id=$(cloudflared::get_zone_id "$cloudflare_token" "$main_domain")
-    local tunnel_url=$(cloudflared::get_tunnel_url "$tunnel_name")
-    local record_id=$(cloudflared::find_cname_record_id "$cloudflare_token" "$main_domain" "$cname_subdomain")
+    local zone_id=$(cloudflared::dns::get_zone_id "$cloudflare_token" "$main_domain")
+    local tunnel_url=$(cloudflared::tunnel::get_url "$tunnel_name")
+    local record_id=$(cloudflared::dns::cname::find_record_id "$cloudflare_token" "$main_domain" "$cname_subdomain")
     cmd::validate_required "$record_id" "CNAME record for '$full_record_name' not found. Cannot update."
 
     local update_payload=$(printf '{"type":"CNAME","name":"%s","content":"%s","proxied":true}' "$full_record_name" "$tunnel_url")
@@ -272,8 +280,8 @@ cloudflared::update_cname() {
 }
 
 # Creates a CNAME record if it doesn't exist, or updates it if it does.
-# Usage: cloudflared::create_or_update_cname <api_token> <main_domain> <tunnel_name> <cname_subdomain>
-cloudflared::create_or_update_cname() {
+# Usage: cloudflared::dns::cname::create_or_update <api_token> <main_domain> <tunnel_name> <cname_subdomain>
+cloudflared::dns::cname::create_or_update() {
     local cloudflare_token="$1"
     local main_domain="$2"
     local tunnel_name="$3"
@@ -281,13 +289,13 @@ cloudflared::create_or_update_cname() {
     cmd::validate_required "$cloudflare_token" "Cloudflare API token must be provided"
 
     local full_record_name="$cname_subdomain.$main_domain"
-    local record_id=$(cloudflared::find_cname_record_id "$cloudflare_token" "$main_domain" "$cname_subdomain")
+    local record_id=$(cloudflared::dns::cname::find_record_id "$cloudflare_token" "$main_domain" "$cname_subdomain")
 
     if [ -z "$record_id" ]; then
         echo "ℹ️ No existing CNAME record found for '$full_record_name'. Creating a new one..."
-        cloudflared::create_cname "$cloudflare_token" "$main_domain" "$tunnel_name" "$cname_subdomain"
+        cloudflared::dns::cname::create "$cloudflare_token" "$main_domain" "$tunnel_name" "$cname_subdomain"
     else
         echo "ℹ️ Existing CNAME record found for '$full_record_name'. Updating it..."
-        cloudflared::update_cname "$cloudflare_token" "$main_domain" "$tunnel_name" "$cname_subdomain"
+        cloudflared::dns::cname::update "$cloudflare_token" "$main_domain" "$tunnel_name" "$cname_subdomain"
     fi
 }
