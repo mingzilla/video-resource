@@ -1,0 +1,33 @@
+services:
+  vllm-server:
+    image: vllm/vllm-openai:latest
+    container_name: vllm_qwen_3b_server
+    ports:
+      - "30202:8000"
+    environment:
+      - MODEL_NAME=Qwen/Qwen2.5-3B-Instruct
+      - MAX_MODEL_LEN=8192
+      - GPU_MEMORY_UTILIZATION=0.9
+      - VLLM_DO_NOT_TRACK=1
+    command: >
+      --model Qwen/Qwen2.5-3B-Instruct
+      --port 8000
+      --host 0.0.0.0
+      --max-model-len 8192
+      --gpu-memory-utilization 0.9
+    volumes:
+      - ./vllm_cache:/root/.cache/huggingface
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
