@@ -1,0 +1,362 @@
+tier1,tier2,tier3,explanation
+Joining,,,Manufacturing processes that permanently or semi-permanently connect two or more parts together to form a single assembly or product
+Joining,Welding,,Fusion joining process that melts and joins metals or thermoplastics using heat and sometimes pressure to create a permanent bond
+Joining,Welding,Arc,Electric arc welding that uses electrical current to create an arc between an electrode and base material generating intense heat to melt and join metals
+Joining,Welding,Oxyfuel gas,Welding process using combustion of fuel gases (typically acetylene) mixed with oxygen to generate flame heat for melting and joining metals
+Joining,Welding,Electric Resistance Welding,Welding process that uses electrical resistance heating combined with pressure to join metals where current passes through the workpieces creating localized heating at the joint
+Joining,Welding,Projection,Resistance welding variant using localized projections or embossments on workpieces to concentrate current flow and create spot welds at predetermined locations
+Joining,Welding,Seam,Continuous resistance welding process using rotating wheel electrodes to create leak-tight longitudinal or circumferential seams in overlapping metal sheets
+Joining,Welding,Upset welding,Resistance welding process that applies pressure to heat metals to forging temperature and then upsets (compresses) them together to form a solid-state joint
+Joining,Welding,Percussion,High-speed welding process using rapid discharge of electrical energy to create an arc that melts the workpiece surfaces which are then rapidly brought together under pressure
+Joining,Welding,Solid state welding,Joining process that bonds metals without melting them using pressure and sometimes heat below the melting point to achieve atomic bonding between surfaces
+Joining,Welding,Electron beam welding,High-precision welding using a focused beam of high-velocity electrons to generate intense heat for deep penetration welds typically performed in vacuum chambers
+Joining,Welding,Laser welding,High-precision welding using focused laser beam energy to melt and join materials with minimal heat-affected zones and high speed suitable for automated manufacturing
+Joining,Welding,Thermite,Exothermic welding process using chemical reaction between metal oxide and aluminum to generate superheated molten metal for joining large sections like rails
+Joining,Welding,Induction,Welding process using electromagnetic induction to generate heat in conductive materials for joining without direct contact with heating element
+Joining,Welding,Solvent,Joining process for thermoplastics where solvent softens material surfaces allowing molecular diffusion and fusion when surfaces are pressed together as solvent evaporates
+Joining,Welding,Magnetic pulse,Solid-state welding using high-intensity magnetic fields to accelerate one workpiece into another at high velocity creating a metallic bond through impact
+Joining,Welding,Radio frequency welding,Welding process using radio frequency electromagnetic energy to heat and fuse thermoplastic materials particularly effective for PVC and polyurethane
+Joining,Welding,Electro-magnetic,Welding process utilizing electromagnetic forces and induced currents to generate heat and pressure for joining conductive materials
+Joining,Welding,Infrared,Welding technique using infrared radiation to heat and soften thermoplastic materials before pressing them together to form a molecular bond
+Joining,Welding,Vacuum welding,Welding process performed in vacuum environment to prevent oxidation and contamination particularly important for reactive metals and high-purity applications
+Joining,Brazing,,Joining process using molten filler metal with melting temperature above 450°C but below the melting point of base materials creating capillary action joint
+Joining,Brazing,Torch,Brazing method using gas flame torch to heat workpieces and melt filler metal allowing manual control for small-scale or repair applications
+Joining,Brazing,Induction brazing,Brazing process using electromagnetic induction to rapidly heat workpieces allowing precise temperature control and localized heating for production applications
+Joining,Brazing,Furnace,Brazing performed in controlled atmosphere furnace providing uniform heating suitable for batch production of multiple joints simultaneously
+Joining,Brazing,Dip,Brazing method where assembled parts are immersed in molten salt bath or molten filler metal providing uniform heating and flux action
+Joining,Soldering,,Joining process using molten filler metal (solder) with melting temperature below 450°C to join metals without melting base materials commonly used in electronics
+Joining,Soldering,Iron,Manual soldering using heated iron tip to melt solder and join components commonly used for electronic assembly and repair work
+Joining,Soldering,Hot plate,Soldering method using heated flat surface to simultaneously heat multiple joints suitable for PCB assembly and production applications
+Joining,Soldering,Oven,Batch soldering process where assembled parts are heated in oven (reflow soldering) commonly used for surface-mount electronic component assembly
+Joining,Soldering,Induction,Soldering using electromagnetic induction heating for rapid localized heating providing precise temperature control for production soldering
+Joining,Soldering,Dip,Soldering method where assembled components are dipped into molten solder bath providing simultaneous soldering of multiple connections
+Joining,Soldering,Wave,Automated soldering process where PCB passes over standing wave of molten solder commonly used for through-hole component assembly
+Joining,Soldering,Ultrasonic,Soldering process using ultrasonic vibrations to break surface oxides and promote solder wetting particularly useful for difficult-to-solder materials
+Joining,Sintering,,High-temperature process that bonds powder particles into solid mass below melting point through atomic diffusion creating dense joined structures
+Joining,Sintering,Conventional Sintering,Traditional sintering process heating compacted powder in furnace below melting point allowing particle bonding through solid-state diffusion
+Joining,Sintering,Spark Plasma Sintering (SPS),Advanced rapid sintering using pulsed DC current through powder compact combining electrical and thermal effects for fast densification with fine microstructures
+Joining,Sintering,Hot Isostatic Pressing (HIP),Sintering process applying high temperature and isostatic gas pressure simultaneously to achieve near-theoretical density and eliminate internal porosity
+Joining,Sintering,Vacuum Sintering,Sintering performed in vacuum environment preventing oxidation and contamination essential for reactive metals and achieving high-purity sintered products
+Joining,Adhesive bonding,,Joining process using adhesive materials to bond surfaces through chemical or physical adhesion creating strong structural or non-structural joints
+Joining,Adhesive bonding,Thermo setting,Adhesive that undergoes irreversible chemical curing when heated forming cross-linked polymer networks that cannot be remelted providing high-temperature resistance
+Joining,Adhesive bonding,Epoxy,Thermosetting adhesive system offering excellent strength chemical resistance and versatility widely used for structural bonding in aerospace automotive and construction
+Joining,Adhesive bonding,Modified epoxy,Epoxy adhesives modified with additional polymers or additives to enhance specific properties like flexibility impact resistance or toughness
+Joining,Adhesive bonding,Phenolics,Thermosetting adhesives based on phenol-formaldehyde resins offering high heat resistance and strength commonly used in wood products and friction materials
+Joining,Adhesive bonding,Polyurethane,Versatile adhesive system offering flexibility impact resistance and good bonding to diverse substrates used in automotive construction and footwear
+Joining,Adhesive bonding,Adhesive alloys,Metallic or pseudo-metallic adhesive systems providing electrical conductivity and thermal management capabilities for electronic and thermal applications
+Joining,Adhesive bonding,Miscellaneous,Various specialized adhesive systems including cyanoacrylates anaerobics and other chemistry types for specific application requirements
+Joining,Adhesive bonding,Thermoplastic,Adhesive that softens when heated and solidifies when cooled allowing repositioning and reworking without chemical curing providing reversible bonding
+Joining,Fastening,,Mechanical joining method using separate hardware components like screws bolts rivets to create disassemblable or permanent connections
+Joining,Fastening,Nailing,Fastening method driving nails (slender pointed metal fasteners) into materials to create mechanical interlocking joint commonly used in woodworking and construction
+Joining,Fastening,Screwing,Fastening using threaded screws that create mechanical connection through thread engagement allowing disassembly and reassembly capability
+Joining,Fastening,Nut and bolts,Fastening system using externally threaded bolts with internally threaded nuts to clamp parts together providing strong disassemblable joints
+Joining,Fastening,Riveting,Permanent fastening method using metal pins (rivets) inserted through holes and mechanically deformed to create head on both sides clamping parts together
+Joining,Fastening,Clinching,Cold forming fastening process that mechanically interlocks sheet materials by localized plastic deformation without additional fasteners or heat
+Joining,Fastening,Pinning,Fastening method using cylindrical or tapered pins inserted into aligned holes to locate and secure components preventing relative movement
+Joining,Fastening,Stitching,Fastening technique using wire staples or specialized fasteners in continuous or intermittent pattern similar to sewing for joining flexible or thin materials
+Joining,Fastening,Stapling,Fastening method using U-shaped metal fasteners driven through materials and clinched on opposite side commonly used for packaging and light assembly
+Joining,Press fitting,,Interference fit assembly method forcing components together where shaft diameter exceeds hole diameter creating friction-based permanent or semi-permanent connection
+Joining,Surface Preparation,,Process of cleaning treating or modifying surfaces before joining operations to improve adhesion wettability and bond strength
+Casting,,,Metal forming process where molten metal is poured into mold cavity and allowed to solidify producing complex shapes in single operation
+Casting,Centrifugal industrial,,Casting process using centrifugal force by rotating mold to distribute molten metal producing hollow cylindrical parts with fine grain structure and density
+Casting,Continuous casting,,Casting process where molten metal is continuously poured and solidified into long lengths typically for producing semi-finished products like billets blooms or slabs
+Casting,Die casting,,High-pressure casting process forcing molten metal into steel molds (dies) under pressure producing high-dimensional accuracy and smooth surface finish for mass production
+Casting,Evaporative pattern,,Casting processes using foam patterns that vaporize when molten metal is poured eliminating pattern removal and allowing complex geometries
+Casting,Evaporative pattern,Full mold casting,Casting process using unbonded sand and expandable polystyrene pattern that vaporizes during pouring allowing production of complex large castings
+Casting,Evaporative pattern,Lost foam casting,Evaporative pattern casting using polystyrene foam patterns embedded in unbonded sand that gasify when molten metal contacts them creating cavity
+Casting,Investment casting,,Precision casting process using expendable wax patterns surrounded by ceramic shell producing high-accuracy complex parts with excellent surface finish
+Casting,Investment casting,Counter gravity casting,Investment casting variant where molten metal fills mold from bottom upward using pressure differential reducing turbulence and improving casting quality
+Casting,Low pressure die,,Casting process applying low air pressure to force molten metal upward into die cavity providing controlled filling and reduced porosity
+Casting,Permanent mold,,Casting process using reusable metal molds providing better dimensional control and surface finish compared to sand casting suitable for medium production volumes
+Casting,Plastic mold,,Casting process using plastic or composite molds typically for low-temperature materials or prototype casting applications providing low-cost tooling
+Casting,Resin casting,,Casting process using liquid resin polymers that cure to solid producing plastic parts tools or patterns without high temperatures
+Casting,Sand casting,,Versatile casting process using sand molds suitable for almost any metal producing parts from small to very large sizes most economical for small production runs
+Casting,Shell molding,,Casting process using thin shell molds made from resin-bonded sand providing better surface finish and dimensional accuracy than conventional sand casting
+Forming,,,Manufacturing processes that plastically deform materials into desired shapes without removing material or changing material volume
+Forming,End tube,,Tube forming processes that shape modify or close tube ends through plastic deformation for functional or aesthetic purposes
+Forming,End tube,Tube beading,Tube end forming process creating circumferential bead or groove near tube end for reinforcement sealing surface or assembly feature
+Forming,Forging,,Metal forming process using compressive forces (hammering or pressing) to plastically deform heated or cold metal into desired shapes with improved mechanical properties
+Forming,Forging,Smith,Traditional hand forging where blacksmith manually shapes heated metal using hammer and anvil providing flexibility for custom and artistic metalwork
+Forming,Forging,Hammer forge,Forging using gravity or power-driven hammer to deliver repeated impacts shaping metal through successive blows suitable for various production scales
+Forming,Forging,Drop forge,Forging process where upper die is raised and dropped onto workpiece in lower die using impact energy to shape metal in closed die impressions
+Forming,Forging,Press,Forging using continuous squeezing pressure from hydraulic or mechanical press rather than impact allowing better control and uniform deformation through entire thickness
+Forming,Forging,Impact,Forging using high-velocity impact to deliver energy rapidly similar to hammer forging providing quick forming cycles for production efficiency
+Forming,Forging,Upset,Forging process that increases cross-sectional area by compressing length typically used for creating heads on fasteners or enlarging bar sections
+Forming,Forging,No draft,Precision forging producing parts with vertical walls (no draft angle) closer to net shape reducing machining requirements
+Forming,Forging,High-energy-rate,Forging using explosive pneumatic or other high-velocity energy sources to deliver extremely rapid forming action suitable for difficult materials
+Forming,Forging,Cored,Forging process creating hollow sections or internal cavities using cores or mandrels reducing material usage and weight
+Forming,Forging,Incremental,Forging process shaping material through series of small sequential deformations allowing complex shapes with lower force requirements than single-step forming
+Forming,Forging,Powder,Forging of powder metallurgy preforms combining compacted powder shapes with hot forging to achieve full density and improved properties
+Forming,Rolling,,Metal forming process passing material between rotating rolls to reduce thickness increase length or impart specific cross-sectional shape
+Forming,Rolling,Cold rolling,Rolling performed at room temperature providing improved surface finish dimensional accuracy and mechanical properties with work hardening effect
+Forming,Rolling,Hot rolling,Rolling performed above recrystallization temperature allowing large deformations without work hardening suitable for breaking down ingots and producing semi-finished products
+Forming,Rolling,Sheet metal,Rolling process producing flat sheets from slabs or coils commonly used for automotive appliance and construction applications
+Forming,Rolling,Shape,Rolling process producing specific cross-sectional profiles like I-beams angles channels and rails using profiled rolls
+Forming,Rolling,Ring,Specialized rolling process forming seamless rings by rotating workpiece while applying radial and axial pressure commonly used for bearings and flanges
+Forming,Rolling,Transverse,Rolling where workpiece axis is perpendicular to roll axes used for forming discrete parts like balls shafts or tapered sections
+Forming,Rolling,Cryorolling,Cold rolling performed at cryogenic temperatures achieving ultrafine grain structures and enhanced mechanical properties particularly for aluminum alloys
+Forming,Rolling,Orbital,Rolling process where cylindrical tool orbits workpiece applying progressive localized deformation for forming flanges reducing tube ends or creating connections
+Forming,Rolling,Thread,Rolling process forming external threads by displacing material between rotating dies providing stronger threads than cutting with improved surface finish
+Forming,Rolling,Extrusion,While typically separate extrusion combined with rolling can refer to continuous processes where extruded profiles are further shaped by rolling operations
+Forming,Extrusion,,Forming process forcing material through shaped die opening to create long products with constant cross-section like rods tubes or profiles
+Forming,Extrusion,Impact extrusion,Cold extrusion process where punch rapidly strikes material slug forcing it to flow backward (reverse extrusion) or forward around punch commonly for tubes and cans
+Forming,Pressing,,Sheet metal forming processes using press machines with dies to cut bend draw or shape flat sheets into three-dimensional parts
+Forming,Pressing,Embossing,Pressing process creating raised or recessed designs patterns or lettering on sheet metal surface for decoration identification or strengthening
+Forming,Pressing,Stretch forming,Forming process clamping sheet edges and stretching material over form die using tensile forces to create large smooth contoured panels for aerospace and automotive
+Forming,Pressing,Blanking,Cutting operation using punch and die to shear sheet material producing flat part (blank) from larger sheet with scrap remaining as skeleton
+Forming,Pressing,Drawing,Deep drawing process using punch to push sheet metal into die cavity forming cup-shaped or box-shaped parts where depth exceeds diameter
+Forming,Pressing,Bulging,Tube or sheet forming using internal pressure (hydraulic or mechanical) to expand material into die cavity creating bulged sections or complex shapes
+Forming,Bending,,Forming process creating angular or curved shapes by applying force to plastically deform sheet or structural material about a linear axis
+Forming,Bending,Hemming,Bending operation folding sheet metal edge back onto itself by 180 degrees to create finished edge eliminate sharp edges or join panels
+Forming,Shearing,,Cutting operation separating material by applying opposing shear forces through upper and lower blades causing fracture along shear plane
+Forming,Shearing,Blanking and piercing,Combined operations where blanking cuts outer profile while piercing creates internal holes simultaneously producing finished part in single press stroke
+Forming,Shearing,Stamping,Press operation combining cutting and forming processes to produce sheet metal parts can include blanking piercing bending and drawing in progressive or compound dies
+Forming,Shearing,Coining,Precision cold forming process applying high pressure to imprint fine details on both surfaces simultaneously producing accurate dimensions and surface details like coins
+Forming,Shearing,Straight shearing,Simple cutting operation using straight blade to separate material along straight line commonly used for cutting sheet metal to size
+Forming,Redrawing,,Deep drawing operation performed on previously drawn part to further reduce diameter and increase depth through additional drawing stages
+Forming,Ironing,,Deep drawing operation that reduces wall thickness while increasing wall height by forcing drawn shell through gap between punch and die
+Forming,Flattening,,Forming process removing curvature or waviness from sheet metal strip or coil by passing through leveling rolls or applying localized pressure
+Forming,Swaging,,Cold forming process reducing cross-section or forming tapers on tubes or rods by rotating dies that impact and compress workpiece radially
+Forming,Spinning,,Forming process rotating sheet metal blank against form tool while applying localized pressure with roller to progressively shape material into axisymmetric parts
+Forming,Peening,,Surface treatment and forming process using impacts from shots balls or hammer to induce compressive residual stress work harden surface or shape material
+Forming,Guerin process,,Sheet metal forming using flexible rubber pad as upper die element conforming to part shape allowing forming of complex contours without expensive matched dies
+Forming,Wheelon process,,Proprietary metalworking process variations may include specialized forming spinning or combination techniques for specific applications
+Forming,Magnetic pulse,,High-rate forming using pulsed magnetic field to generate Lorentz forces rapidly deforming conductive materials without physical contact suitable for tube compression and joining
+Forming,Explosive forming,,High-energy forming using explosive charge to generate pressure wave (in water or air) forcing sheet metal into die cavity for large complex parts
+Forming,Electroforming,,Additive metal forming process depositing metal from electrolytic solution onto mandrel building up precise thickness creating seamless hollow parts or shells
+Forming,Staking,,Mechanical joining and forming process deforming material (usually plastic or soft metal) to capture or retain another component creating permanent assembly
+Forming,Seaming,,Joining operation bending and interlocking sheet metal edges through multiple folds creating mechanical connection commonly used for cans and HVAC ductwork
+Forming,Flanging,,Forming operation bending sheet metal edge perpendicular or at angle to create flange for stiffening attachment surface or forming assembly feature
+Forming,Straightening,,Forming process removing bends curves or twists from bars tubes or sheet returning material to original straight condition
+Forming,Decambering,,Straightening process specifically removing camber (longitudinal curvature) from structural shapes beams or rolled sections
+Forming,Cold sizing,,Cold forming operation forcing part through sizing die to improve dimensional accuracy surface finish and material properties through plastic deformation
+Forming,Hubbing,,Cold forming process pressing hardened master hub into soft steel block to create die cavity impression used for die making
+Forming,Hot metal gas forming,,Forming process using high-pressure gas at elevated temperature to expand tube or sheet material into die cavity particularly for lightweight alloys
+Forming,Curling,,Edge forming operation rolling sheet metal edge into circular profile for stiffening safety edge or decorative purpose
+Forming,Hydroforming,,Forming process using high-pressure hydraulic fluid to expand tube or sheet into die cavity producing complex shapes with uniform wall thickness
+Machining,,,Material removal processes using cutting tools to create desired shapes dimensions and surface finishes by removing unwanted material as chips or particles
+Machining,Milling,,Machining process using rotating multi-point cutting tool to remove material from workpiece can produce flat surfaces slots grooves and complex 3D contours
+Machining,Milling,Grist mill,Industrial facility using mechanical power to grind grain into flour involving roller mills grinders and size reduction equipment
+Machining,Milling,Hammer mill,Size reduction equipment using pivoting hammers to crush and shatter materials through repeated impacts suitable for grain minerals and biomass processing
+Machining,Milling,Ball mill,Grinding equipment using rotating cylinder partially filled with grinding balls to reduce material size through impact and attrition for minerals and powders
+Machining,Milling,Buhrstone mill,Traditional grinding mill using horizontal rotating millstones for grinding grain into flour featuring grooved stone surfaces for cutting and grinding action
+Machining,Milling,Disc mill,Size reduction equipment using rotating discs with abrasive or cutting surfaces to grind materials suitable for fine grinding and fiber processing
+Machining,Milling,Saw mill,Industrial facility for cutting logs into lumber using various sawing equipment including band saws circular saws and processing machinery
+Machining,Milling,"Steel mill (Blast furnace, Smelting, Refining, Reduction mill, Annealing, Pickling, Coating, Passivate)",Integrated facility for producing steel from raw materials through smelting casting rolling and finishing operations including various heat treatment and surface treatment processes
+Machining,Turning,,Machining process rotating cylindrical workpiece against stationary cutting tool producing round parts with features like diameters tapers threads and contours
+Machining,Turning,Lathe,Machine tool for turning operations holding and rotating workpiece while cutting tool removes material creating cylindrical surfaces and features
+Machining,Turning,Facing,Turning operation cutting flat surface perpendicular to rotation axis typically creating end faces on cylindrical parts with cutting tool feeding radially inward
+Machining,Turning,Boring,Internal turning operation enlarging existing holes to precise diameter and finish using single-point cutting tool can also create internal features and contours
+Machining,Turning,Spinning,Metal forming and shaping process rotating sheet metal blank against form while applying localized pressure with tool to create axially symmetric hollow parts
+Machining,Turning,Knurling,Surface treatment operation pressing hardened patterned tool against rotating workpiece to create raised diamond or straight pattern for grip or press-fit applications
+Machining,Turning,Hard turning,Precision turning of hardened materials (typically above 45 HRC) using specialized tooling as alternative to grinding achieving tight tolerances and good surface finish
+Machining,Turning,Thread Cutting,Turning operation creating helical threads on cylindrical surfaces using single-point cutting tool or threading die for producing internal or external threads
+Machining,Turning,Multi-axis Turning,Advanced turning on CNC lathes with additional axes (C-axis rotary tools live tooling) enabling complex features and off-axis operations in single setup
+Machining,Drilling,,Machining operation creating round holes by rotating cutting tool with cutting edges at point advancing axially into solid material
+Machining,Drilling,Friction drilling,Hole-making process using rotating conical tool creating friction heat to soften material and push it aside forming hole with extruded bushing for increased thread engagement
+Machining,Reaming,,Precision machining operation slightly enlarging and finishing previously drilled hole to accurate diameter and improved surface finish using multi-fluted reamer
+Machining,Countersinking,,Machining operation creating conical enlargement at hole entrance to accommodate flat-head fasteners or provide chamfered edge using cone-shaped cutting tool
+Machining,Tapping,,Machining operation cutting internal threads in holes using tap (rotating threaded cutting tool) to create threaded holes for fastener assembly
+Machining,Sawing,,Cutting process separating material using blade with multiple teeth removing material as narrow kerf suitable for straight or contoured cuts
+Machining,Sawing,Filing,Material removal using file (multi-toothed hand tool) for smoothing shaping or finishing surfaces through manual or powered reciprocating or rotary motion
+Machining,Broaching,,Machining process removing material using broach (multi-tooth cutting tool with progressively larger teeth) pulled or pushed through workpiece creating precise internal or external profiles
+Machining,Shaping,,Machining process using single-point cutting tool in reciprocating linear motion to produce flat surfaces slots or contours on horizontal or vertical shaper machines
+Machining,Shaping,Horizontal,Shaping machine with horizontal ram motion and cutting tool moving linearly across workpiece held on table for machining flat surfaces and simple contours
+Machining,Shaping,Vertical,Shaping machine (slotter) with vertical ram motion cutting downward suitable for machining internal surfaces slots keyways and vertical faces
+Machining,Shaping,Special purpose,Custom-designed shaping machines configured for specific production applications with specialized tooling fixtures or automation for efficiency
+Machining,Planing,,Machining process similar to shaping but workpiece reciprocates past stationary cutting tool suitable for large flat surfaces on massive planers
+Machining,Planing,Double housing,Planer with two vertical housings supporting crossrail providing rigid structure for machining very large heavy workpieces with maximum stability
+Machining,Planing,Open side,Planer with one-sided housing allowing machining of wide workpieces that extend beyond machine width providing access for oversized parts
+Machining,Planing,Edge,Specialized planer for machining edges of plates and structural sections ensuring squareness and smoothness for welding preparation or assembly
+Machining,Planing,Pit type,Large planer with table at floor level or in pit for handling extremely heavy massive workpieces with overhead cutting heads
+Machining,Planing,Abrasive jet machining,Material removal using high-velocity stream of fine abrasive particles suspended in gas cutting materials through erosion suitable for hard or brittle materials
+Machining,Planing,Water jet cutting,Cutting process using high-pressure water stream (often with abrasive) to cut materials through erosion suitable for virtually any material without heat distortion
+Machining,Planing,Photochemical machining,Material removal process using photoresist and chemical etching to selectively remove metal creating fine features and patterns without mechanical forces or heat distortion
+Machining,Planing,Abrasive belt,Grinding and finishing using endless abrasive belt running over pulleys for stock removal deburring and surface finishing of flat or contoured surfaces
+Machining,Honing,,Precision abrasive machining process using bonded abrasive stones in reciprocating rotating motion to finish bores achieving tight tolerances and specific surface texture
+Machining,Honing,Electrochemical grinding,Combined process using abrasive grinding wheel and electrolytic action to remove material particularly effective for hard conductive materials with reduced mechanical forces
+Machining,Finishing,,Final surface treatment processes improving surface quality appearance texture or properties through various abrasive chemical or mechanical methods
+Machining,Finishing,Abrasive blasting,Surface treatment propelling abrasive particles against surface using compressed air or mechanical means for cleaning deburring texturing or preparing for coating
+Machining,Finishing,Buffing,Surface finishing using soft wheel charged with abrasive compound creating high luster mirror finish through combination of fine cutting and polishing action
+Machining,Finishing,Burnishing,Surface finishing using smooth hard tool pressed and rubbed against surface plastically deforming peaks to create smooth dense surface with residual compressive stress
+Machining,Finishing,Electroplating,Electrochemical process depositing metal coating from solution onto conductive substrate for corrosion protection decoration or functional properties
+Machining,Finishing,Electro-polishing,Electrochemical surface finishing selectively removing material from metal surface creating smooth bright passive surface finish particularly for stainless steel
+Machining,Finishing,Magnetic field-assisted,Finishing process using magnetic field to control abrasive particle motion against workpiece enabling precise finishing of complex shapes and internal surfaces
+Machining,Finishing,Etching,Chemical or electrochemical process selectively removing surface material for texturing marking decorative purposes or creating micro-patterns
+Machining,Finishing,Linishing,Abrasive finishing using wide belt sander to produce flat surfaces and straight edges through controlled material removal and surface smoothing
+Machining,Finishing,Mass finishing,Batch finishing process tumbling or vibratory processing multiple parts together with media and compound to deburr smooth and polish surfaces
+Machining,Finishing,Plating,General term for applying metallic coating to substrate surface through electrochemical mechanical or chemical deposition for protection decoration or function
+Machining,Finishing,Polishing,Abrasive finishing process progressively refining surface with finer abrasives achieving smooth lustrous surface with reduced roughness and improved appearance
+Machining,Finishing,Superfinishing,Ultra-precision abrasive finishing process using fine stones in controlled motion producing extremely smooth surface with specific micro-texture for bearing and sealing surfaces
+Machining,Finishing,Wire brushing,Surface finishing using rotating or reciprocating wire brushes to clean deburr texture or prepare surfaces through mechanical abrasion
+Machining,Routing,,Machining process using rotating multi-flute cutter to hollow out or profile material commonly used for wood plastics and composites producing grooves slots and contours
+Machining,Hobbing,,Gear cutting process using rotating hob (worm-shaped cutting tool) continuously generating gear teeth through synchronized rotation of hob and workpiece
+Machining,Ultrasonic,,Machining process using high-frequency vibration of tool combined with abrasive slurry to remove material through mechanical impact suitable for hard brittle materials
+Machining,Electrical discharge (EDM),,Non-traditional machining using controlled electrical sparks between electrode and workpiece to remove material through melting and vaporization suitable for hard conductive materials
+Machining,Electron beam,,Material processing using focused beam of high-velocity electrons for precise machining welding or surface treatment in vacuum environment
+Machining,Electrochemical (ECM),,Material removal process using controlled electrochemical dissolution (reverse plating) to remove metal without mechanical forces ideal for hard materials and complex shapes
+Machining,Chemical,,Material removal through controlled chemical reaction (etching) dissolving material selectively for creating patterns recesses or achieving specific surface characteristics
+Machining,Photochemical,,Chemical machining using photoresist patterns to selectively protect areas during etching enabling precision metal removal for fine features in thin materials
+Machining,Laser cutting,,Material cutting and machining using focused high-power laser beam to melt vaporize or burn material providing high precision and minimal heat-affected zone
+Machining,Laser cutting,Laser drilling,Drilling using pulsed or continuous laser beam to create holes through material removal by melting and vaporization suitable for very small diameter holes
+Machining,Grinding,,Abrasive machining using rotating grinding wheel containing bonded abrasive particles to remove material achieving precise dimensions and fine surface finish
+Machining,Grinding,High stock removal,Aggressive grinding operations optimized for rapid material removal rates while maintaining control for roughing operations before precision finishing
+Machining,Gashing,,Rough cutting operation creating initial gaps or gullets in tool blanks (like saw blades or milling cutters) before final tooth forming and sharpening
+Machining,Biomachining,,Biological material removal process using microorganisms or enzymes to selectively dissolve or degrade materials providing environmentally friendly alternative to chemical machining
+Machining,CAM programming,,Computer-aided manufacturing programming creating toolpaths and machine instructions from CAD models for automated CNC machining operations
+Machining,Machinability characterisation,,Testing and analysis determining material cutting characteristics tool life cutting forces surface finish and optimal cutting parameters for manufacturing planning
+Machining,Machining dynamics,,Study and control of vibrations forces stability and dynamic interactions during machining to optimize parameters and prevent chatter for better quality and productivity
+Machining,Stress and surface texture optimisation,,Process engineering controlling machining parameters to achieve desired residual stress states and surface texture characteristics for component performance and functionality
+Machining,Plasma,,Material cutting and surface treatment using ionized gas (plasma) jet at extreme temperature for cutting metal or treating surfaces
+Machining,Cutting tool development,,Design engineering and optimization of cutting tool geometry materials coatings and configurations to improve machining performance and tool life
+Moulding,,,Manufacturing processes forming materials (metals polymers composites) into specific shapes using molds typically involving heating pressing or chemical curing
+Moulding,Powder metallurgy,,Process producing metal parts from metal powders through compaction and sintering achieving near-net-shape complex geometries with controlled porosity
+Moulding,Powder metallurgy,Compaction and sintering,Two-step PM process first compressing metal powder in die at room temperature then heating to bond particles through solid-state diffusion below melting point
+Moulding,Powder metallurgy,Hot isostatic pressing,Consolidation process applying high temperature and uniform gas pressure simultaneously to powder compacts achieving full density and superior mechanical properties
+Moulding,Powder metallurgy,Metal injection moulding,Process combining powder metallurgy and plastic injection molding mixing fine metal powder with polymer binder molding complex shapes then debinding and sintering
+Moulding,Powder metallurgy,Spray forming,Process atomizing molten metal into fine droplets and depositing them onto substrate creating near-net-shape performs with refined microstructure
+Moulding,Rapid prototyping,,Additive and conventional manufacturing processes quickly producing physical prototypes or production parts from digital models for testing and development
+Moulding,Rapid prototyping,Injection,High-volume molding process injecting molten thermoplastic into closed mold cavity under pressure producing complex parts with excellent precision and surface finish
+Moulding,Rapid prototyping,Compression molding,Molding process placing material in open heated mold closing mold and applying pressure curing thermoset or consolidating thermoplastic into part shape
+Moulding,Rapid prototyping,Transfer,Molding process for thermosets where material is heated in chamber then forced through runners into closed heated mold cavity for curing
+Moulding,Rapid prototyping,Extrusion,Continuous process forcing molten polymer through shaped die creating constant cross-section profiles (tubes pipes profiles sheet) then cooling
+Moulding,Rapid prototyping,Blow molding,Process creating hollow plastic parts by inflating heated plastic tube (parison) inside closed mold cavity commonly for bottles and containers
+Moulding,Rapid prototyping,Dip moulding,Process dipping heated mold form into liquid polymer then withdrawing and curing to create hollow seamless parts like gloves balloons or tool grips
+Moulding,Rapid prototyping,Rotational molding,Process rotating heated hollow mold containing polymer powder or liquid in multiple axes distributing material and forming hollow seamless parts during cooling
+Moulding,Rapid prototyping,Thermoforming,Process heating plastic sheet until pliable then forming over or into mold using vacuum pressure or mechanical force producing packaging trays and panels
+Moulding,Rapid prototyping,Laminating,Process bonding multiple layers of material together using adhesive heat and pressure creating composite panels with enhanced properties
+Moulding,Rapid prototyping,Expandable bead,Molding process using pre-expanded polystyrene beads that further expand and fuse together in mold when exposed to steam creating lightweight foam products
+Moulding,Rapid prototyping,Foam,Molding processes creating cellular polymer structures through chemical or physical foaming agents producing lightweight insulation cushioning and structural parts
+Moulding,Rapid prototyping,Vacuum plug assist,Thermoforming variant using vacuum and mechanical plug to assist forming improving detail and thickness distribution in deep-draw applications
+Moulding,Rapid prototyping,Pressure plug assist,Thermoforming using positive air pressure and plug to assist forming providing better control and detail than vacuum alone for deep draws
+Moulding,Rapid prototyping,Matched mould,Thermoforming using matched male and female mold halves providing precise dimensions and details on both surfaces of formed part
+Moulding,Shrink wrapping,,Packaging process wrapping product with plastic film then heating to shrink film tightly around item providing protection tamper evidence and containment
+Design,,,Engineering activities creating specifications drawings models and plans defining products systems processes or facilities before manufacturing or construction
+Design,Software design,,Engineering discipline designing software architectures systems interfaces and implementations for manufacturing control simulation analysis or product embedded systems
+Design,Modelling and simulation,,Engineering process creating mathematical and computational models to predict analyze and optimize system behavior performance and characteristics before physical production
+Design,Process (workflow) design,,Engineering activity defining documenting and optimizing manufacturing sequences material flows information flows and operations to achieve efficient production systems
+Design,Factory design,,Engineering discipline planning physical layout equipment selection material handling systems and infrastructure for manufacturing facilities optimizing efficiency and operations
+Design,Human centred design,,Design philosophy focusing on human factors ergonomics usability and user needs throughout design process ensuring products and systems work effectively for people
+Design,Digital prototyping,,Engineering process creating detailed virtual 3D models and simulations of products assemblies and systems for testing and validation before physical prototypes
+Design,Product Life Cycle Analysis,,Systematic analysis evaluating environmental economic and performance impacts of product throughout entire life from raw material through manufacturing use and disposal
+Design,Design for 2nd life and End of life,,Design approach considering product reuse remanufacturing recycling and disposal planning for disassembly material recovery and environmental responsibility
+Digital,,,Technologies systems and capabilities related to computerization data processing connectivity automation and information technology in manufacturing environments
+Digital,Cybersecurity,,Technologies practices and policies protecting digital systems networks data and operations from unauthorized access attacks and cyber threats in manufacturing environments
+Digital,Data analytics,,Techniques and systems collecting processing analyzing and visualizing manufacturing data to derive insights optimize operations and support decision-making
+Digital,Standards and policies related to digital engineering,,Frameworks protocols regulations and best practices governing digital manufacturing data exchange interoperability security and intellectual property
+Digital,Artificial intelligence / machine learning,,Computer systems and algorithms learning from data to perform tasks like prediction classification optimization and decision support in manufacturing applications
+Digital,Industrial IoT,,Interconnected network of sensors devices machines and systems in manufacturing environment collecting and exchanging data for monitoring control and optimization
+Digital,Visualisation,,Technologies creating visual representations of data models processes or systems for understanding analysis communication and decision-making
+Digital,Visualisation,Virtual Reality,Immersive computer-generated 3D environment users can interact with using specialized hardware for training design review simulation and visualization applications
+Digital,Visualisation,Augmented reality,Technology overlaying digital information and graphics onto real-world view through devices enhancing perception and providing contextual information for assembly maintenance and training
+Digital,Visualisation,Extended reality,Umbrella term encompassing all immersive technologies including virtual reality augmented reality and mixed reality for various manufacturing applications
+Digital,Visualisation,Mixed Reality,Technology blending physical and digital worlds allowing virtual objects to interact with real environment for collaborative design visualization and spatial computing
+Measurement OR Testing,,,Processes equipment and techniques for evaluating measuring inspecting and verifying physical chemical mechanical and dimensional characteristics of materials and products
+Measurement OR Testing,Microscopy and material characterisation,,Analytical techniques using microscopes and instruments to examine microstructure composition morphology and properties of materials at microscopic scales
+Measurement OR Testing,,,"Measurement OR Testing is a high-level manufacturing capability domain that groups together related processes, technologies, and expertise areas used across industrial production and engineering."
+Measurement OR Testing,Chemical analysis,,Laboratory techniques identifying and quantifying chemical composition and elements in materials using spectroscopy chromatography and wet chemistry methods
+Measurement OR Testing,Contact and non-contact coordinate measurement,,Dimensional measurement using coordinate measuring machines with touch probes or optical/laser sensors to verify geometry and tolerances
+Measurement OR Testing,Humidity measurement and monitoring,,Instrumentation and sensors measuring relative humidity dew point or absolute moisture content in environments for process control and quality assurance
+Measurement OR Testing,Temperature measurement and monitoring,,Sensors and instruments measuring temperature using thermocouples RTDs infrared or other methods for process control heat treatment and environmental monitoring
+Measurement OR Testing,Mechanical testing,,Laboratory testing determining material mechanical properties including tensile strength hardness toughness fatigue creep and impact resistance through standardized test methods
+Measurement OR Testing,Residual stress measurement ,,Techniques measuring internal stresses remaining in material after manufacturing using X-ray diffraction hole drilling or ultrasonic methods affecting performance and distortion
+Measurement OR Testing,Metrology,,Science of measurement including dimensional geometric and quality measurement establishing traceability accuracy and calibration systems for manufacturing measurement equipment
+Measurement OR Testing,Machine verification,,Procedures measuring and verifying machine tool accuracy positioning repeatability geometry and performance using standards artifacts and calibrated instruments
+Measurement OR Testing,In-process inspection technologies,,Measurement systems integrated into manufacturing processes providing real-time dimensional or quality data enabling process adjustment and 100% inspection
+Measurement OR Testing,In-process monitoring ,,Sensors and systems continuously measuring process parameters like forces temperatures vibrations during manufacturing operations for quality control and optimization
+Measurement OR Testing,Surface metrology,,Measurement and characterization of surface texture roughness waviness and form using contact or optical instruments for quality control and functional performance
+Measurement OR Testing,Non Destructive testing,,Inspection techniques evaluating material and component integrity without causing damage using ultrasonic radiography magnetic particle dye penetrant or eddy current methods
+Measurement OR Testing,Reverse Engineering,,Process measuring and analyzing existing physical parts to create CAD models drawings or specifications recreating design intent from physical artifacts
+Measurement OR Testing,Measurement Management Systems,,Organizational systems managing calibration measurement uncertainty traceability documentation and quality assurance for measurement equipment and processes
+Measurement OR Testing,Verification ,,Activities confirming that measurements products processes or systems meet specified requirements through objective evidence and testing
+Measurement OR Testing,Verification ,Standards,Reference artifacts materials or procedures with certified known values used to calibrate verify or validate measurement systems and instruments
+Measurement OR Testing,Verification ,Artefacts,Physical objects with certified geometric dimensional or material properties used as references for calibrating and verifying measurement equipment and processes
+Measurement OR Testing,Molecular Topollogy,,Study and analysis of three-dimensional spatial arrangement and connectivity of molecules particularly relevant for understanding material properties and biological systems
+Measurement OR Testing,Molecular Topollogy,Biomolecules,Analysis and characterization of biological molecules including proteins nucleic acids and carbohydrates studying their structure function and interactions
+Measurement OR Testing,Genomes ,,Analysis and sequencing of complete genetic material of organisms relevant for biotechnology materials development and biological manufacturing processes
+Additive Manufacturing OR 3D printing OR 3DP,,,Layer-by-layer manufacturing processes building three-dimensional objects from digital models by selectively adding material enabling complex geometries and customization
+Additive Manufacturing OR 3D printing OR 3DP,Vat photopolymerisation,,3D printing process using light (UV laser or projector) to selectively cure liquid photopolymer resin in vat layer by layer producing high-resolution parts
+Additive Manufacturing OR 3D printing OR 3DP,Vat photopolymerisation,Stereolithography,First commercial 3D printing technology using UV laser to cure liquid photopolymer resin point by point creating high-detail prototypes and patterns
+Additive Manufacturing OR 3D printing OR 3DP,Vat photopolymerisation,Digital Light Processing,Vat polymerization using digital projector to cure entire layer simultaneously faster than laser-based systems producing smooth high-resolution parts
+Additive Manufacturing OR 3D printing OR 3DP,Vat photopolymerisation,Continuous Digital Light Processing,Advanced DLP variant continuously pulling part from resin vat while projecting image sequence dramatically increasing build speed for production applications
+Additive Manufacturing OR 3D printing OR 3DP,,,"Additive Manufacturing OR 3D printing OR 3DP is a high-level manufacturing capability domain that groups together related processes, technologies, and expertise areas used across industrial production and engineering."
+Additive Manufacturing OR 3D printing OR 3DP,Material Extrusion (FDM),,3D printing process extruding thermoplastic filament through heated nozzle depositing material layer by layer most common desktop 3D printing technology
+Additive Manufacturing OR 3D printing OR 3DP,Material Jetting,,3D printing selectively depositing droplets of photopolymer or wax materials then curing with UV light building high-resolution multi-material parts
+Additive Manufacturing OR 3D printing OR 3DP,Material Jetting,PolyJet technology,Material jetting using multiple print heads to deposit photopolymer droplets and support material enabling multi-material full-color high-detail parts
+Additive Manufacturing OR 3D printing OR 3DP,Material Jetting,NanoParticle Jetting (NPJ),Material jetting depositing nanoparticle metal ink then sintering to create metal parts offering fine detail and smooth surfaces without powder
+Additive Manufacturing OR 3D printing OR 3DP,Material Jetting,Drop-On Demand (DOD),Material jetting technology depositing individual droplets of build and support materials on demand similar to inkjet printing for wax or thermoplastic parts
+Additive Manufacturing OR 3D printing OR 3DP,Binder Jetting,,3D printing selectively depositing liquid binder onto powder bed bonding particles layer by layer used for sand molds metal parts and ceramics
+Additive Manufacturing OR 3D printing OR 3DP,Binder Jetting,Furan,Binder jetting for sand molds using furan-based organic binder system providing high strength and thermal stability for metal casting applications
+Additive Manufacturing OR 3D printing OR 3DP,Binder Jetting,Silicate Binder,Binder jetting using sodium silicate (water glass) binder providing environmentally friendly option for sand molds with good strength and collapsibility
+Additive Manufacturing OR 3D printing OR 3DP,Binder Jetting,Phenolic Binder,Binder jetting using phenolic resin binder offering excellent high-temperature strength for sand molds in ferrous and non-ferrous casting
+Additive Manufacturing OR 3D printing OR 3DP,Binder Jetting,Aqueous-Based Binder,Binder jetting using water-based binder systems for metals ceramics or sand providing safer handling and environmental advantages over solvent-based systems
+Additive Manufacturing OR 3D printing OR 3DP,Powder bed fusion,,3D printing selectively fusing powder particles using thermal energy (laser or electron beam) layer by layer producing fully dense functional metal or polymer parts
+Additive Manufacturing OR 3D printing OR 3DP,Powder bed fusion,Laser Fused,Powder bed fusion using laser beam (SLS for polymers SLM/DMLS for metals) to selectively melt and fuse powder particles producing high-strength functional parts
+Additive Manufacturing OR 3D printing OR 3DP,Powder bed fusion,Electron Beam fused,Powder bed fusion using electron beam in vacuum to melt metal powder offering faster build speeds and reduced residual stress particularly for reactive metals
+Additive Manufacturing OR 3D printing OR 3DP,Powder bed fusion,Fused with agent and energy,Powder bed fusion depositing chemical agents on powder bed then applying energy to selectively fuse material (like HP Multi Jet Fusion) enabling high productivity
+Additive Manufacturing OR 3D printing OR 3DP,Powder bed fusion,Thermally fused,Powder bed fusion using thermal energy without specific energy source focus referring to general thermal bonding mechanisms in various PBF technologies
+Additive Manufacturing OR 3D printing OR 3DP,Direct energy deposition,,3D printing simultaneously melting and depositing material (powder or wire) using focused energy source building or repairing parts through layer addition
+Additive Manufacturing OR 3D printing OR 3DP,Direct energy deposition,Laser-based DED systems,Direct energy deposition using laser as energy source with powder or wire feedstock for building large parts cladding and repair applications
+Additive Manufacturing OR 3D printing OR 3DP,Direct energy deposition,Electron beam-based DED systems,Direct energy deposition using electron beam in vacuum chamber with wire feedstock for high deposition rate large-scale metal part production
+Additive Manufacturing OR 3D printing OR 3DP,Direct energy deposition,Manufacturing (EBAM),Electron beam additive manufacturing using wire feedstock and electron beam for rapid large-scale metal part production with high material efficiency
+Additive Manufacturing OR 3D printing OR 3DP,Sheet lamination,,3D printing bonding sheets of material (paper plastic metal) together layer by layer through adhesive ultrasonic welding or brazing then cutting profiles
+Additive Manufacturing OR 3D printing OR 3DP,Sheet lamination,Laminated Object Manufacturing (LOM),Sheet lamination using adhesive-coated paper or plastic sheets bonded together and laser-cut creating large low-cost prototypes and patterns
+Additive Manufacturing OR 3D printing OR 3DP,Sheet lamination,Selective Lamination Composite Object Manufacturing (SLCOM),Sheet lamination selectively bonding composite material sheets only where needed reducing material waste and enabling heterogeneous material structures
+Additive Manufacturing OR 3D printing OR 3DP,Sheet lamination,Plastic Sheet Lamination (PSL),Sheet lamination process bonding thermoplastic sheets through heat and pressure then cutting contours creating durable plastic parts and composites
+Additive Manufacturing OR 3D printing OR 3DP,Sheet lamination,Computer-Aided Manufacturing of Laminated` Engineering Materials (CAM-LEM),Sheet lamination system for creating composite structures and tooling from engineering materials using computer-controlled lamination and cutting
+Additive Manufacturing OR 3D printing OR 3DP,Sheet lamination,Selective Deposition Lamination (SDL),Hybrid process combining material deposition and sheet lamination enabling multi-material structures with controlled internal architecture
+Additive Manufacturing OR 3D printing OR 3DP,Sheet lamination,Composite Based Additive Manufacturing (CBAM),Sheet lamination focused on building fiber-reinforced composite structures with controlled fiber orientation and layer architecture for structural applications
+Additive Manufacturing OR 3D printing OR 3DP,Sheet lamination,Ultrasonic Additive Manufacturing (UAM),Sheet lamination using ultrasonic welding to bond metal foils creating solid metal parts at low temperature enabling embedded sensors and dissimilar metal joining
+Composites,,,Manufacturing processes for fiber-reinforced polymer materials combining reinforcement fibers with polymer matrix to create lightweight high-strength structures
+Composites,Wet Lay-Up,,Manual composite manufacturing placing dry reinforcement fabrics in mold then applying liquid resin by hand rolling out entrapped air simple low-cost process
+Composites,Wet Spray-Up,,Composite manufacturing simultaneously spraying chopped fibers and catalyzed resin onto mold surface then rolling to consolidate faster than wet lay-up for large parts
+Composites,Vacuum Infusion,,Composite process placing dry reinforcement in mold covering with vacuum bag then drawing liquid resin through fabric using vacuum pressure producing high fiber content parts
+Composites,Resin Transfer Moulding (RTM),,Closed-mold composite process placing dry reinforcement in mold closing mold then injecting resin under pressure producing parts with two finished surfaces
+Composites,RTM Light,,Simplified resin transfer molding using lightweight tooling and lower pressures providing cost-effective alternative for medium-volume composite part production
+Composites,Prepreg,,Pre-impregnated composite material with fibers already combined with partially cured resin requiring cold storage and oven curing producing high-quality structural parts
+Composites,Filament Winding,,Automated composite process winding continuous resin-impregnated fibers onto rotating mandrel creating hollow cylindrical or spherical structures with excellent strength
+Composites,Moulding Compounds,,Composite materials in ready-to-mold form including sheet molding compound (SMC) and bulk molding compound (BMC) used in compression or injection molding
+Composites,Continuous Processes,,Composite manufacturing methods producing continuous lengths of constant-cross-section profiles through continuous fiber reinforcement and resin curing
+Composites,Continuous Processes,Pultrusion,Continuous composite process pulling fiber rovings through resin bath then heated die producing constant-cross-section profiles like rods tubes and structural shapes
+Composites,Continuous Processes,Pull-winding,Hybrid process combining pultrusion and filament winding producing continuous cylindrical profiles with both axial and circumferential reinforcement
+Composites,Continuous Processes,Continuous sheet,Continuous process producing flat composite sheets or panels through continuous fiber reinforcement and resin impregnation for secondary forming or applications
+Composites,Continuous Processes,Continuous filament winding,Automated process continuously winding resin-impregnated fibers onto mandrel for producing long cylindrical structures like pipes with continuous production
+Composites,Thermoplastics,,Composite materials using thermoplastic matrix (instead of thermoset) enabling rapid processing reformability recycling and welding with fiber reinforcement
+Composites,Automated composites preforming,,Automated processes creating dry fiber preforms matching final part shape before resin infusion using robotic placement pressing or forming equipment
+Composites,Automated composites preforming,Robot/press forming,Automated process using robots or presses to form dry fiber reinforcements into three-dimensional preform shapes before resin infusion or other molding
+Composites,Automated composites preforming,Double diapgrahm forming,Preforming process using pressurized membranes above and below fiber stack to form complex double-curvature shapes with reduced wrinkles and good compaction
+Automation,,,Technologies systems and integration of mechanical electrical and software systems to operate manufacturing processes with reduced human intervention
+Automation,Autonomous manufacturing application,,Advanced manufacturing systems using artificial intelligence sensors and control algorithms to make decisions and adapt operations without human intervention
+Automation,Robotics & advanced robotics,,Programmable machines performing manufacturing tasks like assembly welding painting and material handling with increasing intelligence collaboration and flexibility
+Automation,Advanced Process Control,,Sophisticated control algorithms and systems optimizing manufacturing process parameters in real-time using mathematical models sensors and feedback for quality and efficiency
+Automation,Bespoke automation & mechatronics,,Custom-designed automated systems integrating mechanical electrical electronic and software engineering to solve specific manufacturing challenges and requirements
+Automation,Factory and Assembly,,Automation systems and equipment for manufacturing assembly operations including workstations material handling quality inspection and process integration
+Automation,Factory and Assembly,Automated assembly,Robotic or mechanized systems performing assembly operations like part insertion fastening welding or bonding with automated feeding positioning and quality verification
+Automation,Factory and Assembly,Smart assembly and work holding,Intelligent fixtures and holding systems using sensors actuators and control to automatically adapt position verify and secure workpieces during assembly operations
+Automation,Factory and Assembly,In-factory automated part movement,Material handling systems including conveyors AGVs AMRs robots and automated storage/retrieval moving parts materials and products throughout manufacturing facility
+Automation,Sensors and connectivity,,Devices and networks measuring physical parameters and transmitting data enabling monitoring control and integration of manufacturing equipment and systems
+Automation,Human Robotics / Assistance Systems,,Collaborative robots exoskeletons and assistive technologies working alongside humans enhancing capabilities safety ergonomics and productivity in manufacturing tasks
+Biotech,,,Biological manufacturing processes using living organisms cells or biological systems to produce materials chemicals pharmaceuticals or modify biological materials
+Biotech,Fermentation / Cultivation,,Biological process growing microorganisms (bacteria yeast fungi) or cells in controlled conditions to produce desired metabolites proteins or biomass
+Biotech,Fermentation / Cultivation,Submerged,Fermentation where microorganisms grow suspended in liquid medium most common industrial fermentation method for producing chemicals enzymes and pharmaceuticals
+Biotech,Fermentation / Cultivation,Solid state,Fermentation where microorganisms grow on solid substrate material with minimal free water used for producing enzymes organic acids and traditional fermented foods
+Biotech,Fermentation / Cultivation,Aerial,Fermentation occurring in gas phase or with significant gas exchange important for aerobic organisms requiring oxygen for growth and metabolism
+Biotech,Fermentation / Cultivation,Surface,Fermentation where microorganisms grow on surface of liquid medium or solid substrate interface used for specific organisms like fungi producing enzymes
+Biotech,Downstream processes,,Operations following fermentation separating purifying concentrating and preparing biological products from fermentation broth or cell culture for final use
+Biotech,Downstream processes,Seperation,Processes separating target product from cells debris and other components using centrifugation filtration or settling as first step in downstream processing
+Biotech,Downstream processes,Drying,Removing water from biological products using techniques like spray drying freeze drying or vacuum drying to create stable powdered or solid products
+Biotech,Downstream processes,Purification,Processes isolating and concentrating target biological product from contaminants using chromatography crystallization precipitation or membrane separation achieving required purity
+Biotech,Downstream processes,Finishing Processes,Final processing steps including formulation packaging sterilization and quality testing preparing biological products for distribution and use
+Biotech,Upstream Processes,,Operations before fermentation including raw material preparation media formulation sterilization inoculum preparation and feed stream preparation
+Biotech,Upstream Processes,Alteration,Genetic or metabolic modification of organisms to enhance productivity introduce new capabilities or optimize production characteristics for bioprocessing
+Biotech,Upstream Processes,Sterilisation,Eliminating unwanted microorganisms from equipment media and air using heat chemicals radiation or filtration to prevent contamination in fermentation processes
+Biotech,Analysis,,Analytical methods characterizing measuring and monitoring biological materials products and process parameters ensuring quality and process understanding
+Biotech,Analysis,Spectrometry,Analytical techniques measuring properties of matter through interaction with electromagnetic radiation including mass spectrometry UV-Vis and infrared for identifying and quantifying molecules
+Biotech,Analysis,Chromatography,Separation and analysis techniques including HPLC GC and affinity chromatography separating and quantifying components in complex biological mixtures
+Biotech,Analysis,Wet Chemistry,Classical analytical chemistry techniques using chemical reactions titrations and colorimetric methods for analyzing biological samples and process streams
+Biotech,Culturing,,Laboratory and production-scale growing of microorganisms cells or tissues in controlled conditions for research production or testing applications
+Biotech,Culturing,Strain Development,Genetic engineering selection and optimization of microorganisms or cell lines to improve production characteristics yields stability or introduce new capabilities
+Biotech,Culturing,Medium development,Formulation and optimization of nutrient solutions providing necessary carbon nitrogen minerals and growth factors for optimal organism growth and product formation
+Biotech,Process Engineering,,Engineering design optimization and scale-up of biotechnology processes including bioreactor design process control mass transfer and economic analysis
+Biotech,Process Engineering,Modeling,Mathematical and computational representation of biological processes predicting performance optimizing conditions and understanding system behavior for scale-up and control
+Biotech,Process Engineering,Economic analysis,Financial and technical evaluation of biotechnology processes assessing capital costs operating expenses yields and profitability for investment and optimization decisions

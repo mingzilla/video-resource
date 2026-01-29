@@ -1,0 +1,2089 @@
+[
+    {
+        "Tier1": "Joining",
+        "Tier1Human": "Joining",
+        "Tier2": [
+            {
+                "TEXT": "Welding"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Arc"
+            },
+            {
+                "TEXT": "Oxyfuel gas"
+            },
+            {
+                "TEXT": "Electric Resistance Welding"
+            },
+            {
+                "TEXT": "Projection"
+            },
+            {
+                "TEXT": "Seam"
+            },
+            {
+                "TEXT": "Upset welding"
+            },
+            {
+                "TEXT": "Percussion"
+            },
+            {
+                "TEXT": "Solid state welding"
+            },
+            {
+                "TEXT": "Electron beam welding"
+            },
+            {
+                "TEXT": "Laser welding"
+            },
+            {
+                "TEXT": "Thermite"
+            },
+            {
+                "TEXT": "Induction"
+            },
+            {
+                "TEXT": "Solvent"
+            },
+            {
+                "TEXT": "Magnetic pulse"
+            },
+            {
+                "TEXT": "Radio frequency welding"
+            },
+            {
+                "TEXT": "Electro-magnetic"
+            },
+            {
+                "TEXT": "Infrared"
+            },
+            {
+                "TEXT": "Vacuum welding"
+            }
+        ]
+    },
+    {
+        "Tier1": "Joining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Brazing"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Torch"
+            },
+            {
+                "TEXT": "Induction brazing"
+            },
+            {
+                "TEXT": "Furnace"
+            },
+            {
+                "TEXT": "Dip"
+            }
+        ]
+    },
+    {
+        "Tier1": "Joining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Soldering"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Iron"
+            },
+            {
+                "TEXT": "Hot plate"
+            },
+            {
+                "TEXT": "Oven"
+            },
+            {
+                "TEXT": "Induction"
+            },
+            {
+                "TEXT": "Dip"
+            },
+            {
+                "TEXT": "Wave"
+            },
+            {
+                "TEXT": "Ultrasonic"
+            }
+        ]
+    },
+    {
+        "Tier1": "Joining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Sintering"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Conventional Sintering"
+            },
+            {
+                "TEXT": "Spark Plasma Sintering (SPS)"
+            },
+            {
+                "TEXT": "Hot Isostatic Pressing (HIP)"
+            },
+            {
+                "TEXT": "Vacuum Sintering"
+            }
+        ]
+    },
+    {
+        "Tier1": "Joining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Adhesive bonding"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Thermo setting"
+            },
+            {
+                "TEXT": "Epoxy"
+            },
+            {
+                "TEXT": "Modified epoxy"
+            },
+            {
+                "TEXT": "Phenolics"
+            },
+            {
+                "TEXT": "Polyurethane"
+            },
+            {
+                "TEXT": "Adhesive alloys"
+            },
+            {
+                "TEXT": "Miscellaneous"
+            },
+            {
+                "TEXT": "Thermoplastic"
+            }
+        ]
+    },
+    {
+        "Tier1": "Joining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Fastening"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Nailing"
+            },
+            {
+                "TEXT": "Screwing"
+            },
+            {
+                "TEXT": "Nut and bolts"
+            },
+            {
+                "TEXT": "Riveting"
+            },
+            {
+                "TEXT": "Clinching"
+            },
+            {
+                "TEXT": "Pinning"
+            },
+            {
+                "TEXT": "Stitching"
+            },
+            {
+                "TEXT": "Stapling"
+            }
+        ]
+    },
+    {
+        "Tier1": "Joining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Press fitting"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Joining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Surface Preparation"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Casting",
+        "Tier1Human": "Casting",
+        "Tier2": [
+            {
+                "TEXT": "Centrifugal industrial"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Casting",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Continuous casting"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Casting",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Die casting"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Casting",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Evaporative pattern"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Full mold casting"
+            },
+            {
+                "TEXT": "Lost foam casting"
+            }
+        ]
+    },
+    {
+        "Tier1": "Casting",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Investment casting"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Counter gravity casting"
+            }
+        ]
+    },
+    {
+        "Tier1": "Casting",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Low pressure die"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Casting",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Permanent mold"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Casting",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Plastic mold"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Casting",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Resin casting"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Casting",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Sand casting"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Casting",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Shell molding"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": "Forming",
+        "Tier2": [
+            {
+                "TEXT": "End tube"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Tube beading"
+            }
+        ]
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Forging"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Smith"
+            },
+            {
+                "TEXT": "Hammer forge"
+            },
+            {
+                "TEXT": "Drop forge"
+            },
+            {
+                "TEXT": "Press"
+            },
+            {
+                "TEXT": "Impact"
+            },
+            {
+                "TEXT": "Upset"
+            },
+            {
+                "TEXT": "No draft"
+            },
+            {
+                "TEXT": "High-energy-rate"
+            },
+            {
+                "TEXT": "Cored"
+            },
+            {
+                "TEXT": "Incremental"
+            },
+            {
+                "TEXT": "Powder"
+            }
+        ]
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Rolling"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Cold rolling"
+            },
+            {
+                "TEXT": "Hot rolling"
+            },
+            {
+                "TEXT": "Sheet metal"
+            },
+            {
+                "TEXT": "Shape"
+            },
+            {
+                "TEXT": "Ring"
+            },
+            {
+                "TEXT": "Transverse"
+            },
+            {
+                "TEXT": "Cryorolling"
+            },
+            {
+                "TEXT": "Orbital"
+            },
+            {
+                "TEXT": "Thread"
+            },
+            {
+                "TEXT": "Extrusion"
+            }
+        ]
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Extrusion"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Impact extrusion"
+            }
+        ]
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Pressing"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Embossing"
+            },
+            {
+                "TEXT": "Stretch forming"
+            },
+            {
+                "TEXT": "Blanking"
+            },
+            {
+                "TEXT": "Drawing"
+            },
+            {
+                "TEXT": "Bulging"
+            }
+        ]
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Bending"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Hemming"
+            }
+        ]
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Shearing"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Blanking and piercing"
+            },
+            {
+                "TEXT": "Stamping"
+            },
+            {
+                "TEXT": "Coining"
+            },
+            {
+                "TEXT": "Straight shearing"
+            }
+        ]
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Redrawing"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Ironing"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Flattening"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Swaging"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Spinning"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Peening"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Guerin process"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Wheelon process"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Magnetic pulse"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Explosive forming"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Electroforming"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Staking"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Seaming"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Flanging"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Straightening"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Decambering"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Cold sizing"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Hubbing"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Hot metal gas forming"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Curling"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Forming",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Hydroforming"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": "Machining",
+        "Tier2": [
+            {
+                "TEXT": "Milling"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Grist mill"
+            },
+            {
+                "TEXT": "Hammer mill"
+            },
+            {
+                "TEXT": "Ball mill"
+            },
+            {
+                "TEXT": "Buhrstone mill"
+            },
+            {
+                "TEXT": "Disc mill"
+            },
+            {
+                "TEXT": "Saw mill"
+            },
+            {
+                "TEXT": "Steel mill (Blast furnace, Smelting, Refining, Reduction mill, Annealing, Pickling, Coating, Passivate)"
+            }
+        ]
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Turning"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Lathe"
+            },
+            {
+                "TEXT": "Facing"
+            },
+            {
+                "TEXT": "Boring"
+            },
+            {
+                "TEXT": "Spinning"
+            },
+            {
+                "TEXT": "Knurling"
+            },
+            {
+                "TEXT": "Hard turning"
+            },
+            {
+                "TEXT": "Thread Cutting"
+            },
+            {
+                "TEXT": "Multi-axis Turning"
+            }
+        ]
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Drilling"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Friction drilling"
+            }
+        ]
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Reaming"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Countersinking"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Tapping"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Sawing"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Filing"
+            }
+        ]
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Broaching"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Shaping"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Horizontal"
+            },
+            {
+                "TEXT": "Vertical"
+            },
+            {
+                "TEXT": "Special purpose"
+            }
+        ]
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Planing"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Double housing"
+            },
+            {
+                "TEXT": "Open side"
+            },
+            {
+                "TEXT": "Edge"
+            },
+            {
+                "TEXT": "Pit type"
+            },
+            {
+                "TEXT": "Abrasive jet machining"
+            },
+            {
+                "TEXT": "Water jet cutting"
+            },
+            {
+                "TEXT": "Photochemical machining"
+            },
+            {
+                "TEXT": "Abrasive belt"
+            }
+        ]
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Honing"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Electrochemical grinding"
+            }
+        ]
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Finishing"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Abrasive blasting"
+            },
+            {
+                "TEXT": "Buffing"
+            },
+            {
+                "TEXT": "Burnishing"
+            },
+            {
+                "TEXT": "Electroplating"
+            },
+            {
+                "TEXT": "Electro-polishing"
+            },
+            {
+                "TEXT": "Magnetic field-assisted"
+            },
+            {
+                "TEXT": "Etching"
+            },
+            {
+                "TEXT": "Linishing"
+            },
+            {
+                "TEXT": "Mass finishing"
+            },
+            {
+                "TEXT": "Plating"
+            },
+            {
+                "TEXT": "Polishing"
+            },
+            {
+                "TEXT": "Superfinishing"
+            },
+            {
+                "TEXT": "Wire brushing"
+            }
+        ]
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Routing"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Hobbing"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Ultrasonic"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Electrical discharge (EDM)"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Electron beam"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Electrochemical (ECM)"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Chemical"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Photochemical"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Laser cutting"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Laser drilling"
+            }
+        ]
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Grinding"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "High stock removal"
+            }
+        ]
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Gashing"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Biomachining"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "CAM programming"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Machinability characterisation"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Machining dynamics"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Stress and surface texture optimisation"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Plasma"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Machining",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Cutting tool development"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Moulding",
+        "Tier1Human": "Moulding",
+        "Tier2": [
+            {
+                "TEXT": "Powder metallurgy"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Compaction and sintering"
+            },
+            {
+                "TEXT": "Hot isostatic pressing"
+            },
+            {
+                "TEXT": "Metal injection moulding"
+            },
+            {
+                "TEXT": "Spray forming"
+            }
+        ]
+    },
+    {
+        "Tier1": "Moulding",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Rapid prototyping"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Injection"
+            },
+            {
+                "TEXT": "Compression molding"
+            },
+            {
+                "TEXT": "Transfer"
+            },
+            {
+                "TEXT": "Extrusion"
+            },
+            {
+                "TEXT": "Blow molding"
+            },
+            {
+                "TEXT": "Dip moulding"
+            },
+            {
+                "TEXT": "Rotational molding"
+            },
+            {
+                "TEXT": "Thermoforming"
+            },
+            {
+                "TEXT": "Laminating"
+            },
+            {
+                "TEXT": "Expandable bead"
+            },
+            {
+                "TEXT": "Foam"
+            },
+            {
+                "TEXT": "Vacuum plug assist"
+            },
+            {
+                "TEXT": "Pressure plug assist"
+            },
+            {
+                "TEXT": "Matched mould"
+            }
+        ]
+    },
+    {
+        "Tier1": "Moulding",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Shrink wrapping"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Design",
+        "Tier1Human": "Design",
+        "Tier2": [
+            {
+                "TEXT": "Software design"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Design",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Modelling and simulation"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Design",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Process (workflow) design"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Design",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Factory design"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Design",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Human centred design"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Design",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Digital prototyping"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Design",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Product Life Cycle Analysis"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Design",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Design for 2nd life and End of life"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Digital",
+        "Tier1Human": "Digital",
+        "Tier2": [
+            {
+                "TEXT": "Cybersecurity"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Digital",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Data analytics"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Digital",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Standards and policies related to digital engineering"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Digital",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Artificial intelligence / machine learning"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Digital",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Industrial IoT"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Digital",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Visualisation"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Virtual Reality"
+            },
+            {
+                "TEXT": "Augmented reality"
+            },
+            {
+                "TEXT": "Extended reality"
+            },
+            {
+                "TEXT": "Mixed Reality"
+            }
+        ]
+    },
+    {
+        "Tier1": "Measurement OR Testing",
+        "Tier1Human": "Measurement & Testing",
+        "Tier2": [
+            {
+                "TEXT": "Microscopy and material characterisation"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Measurement OR Testing",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Chemical analysis"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Measurement OR Testing",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Contact and non-contact coordinate measurement"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Measurement OR Testing",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Humidity measurement and monitoring"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Measurement OR Testing",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Temperature measurement and monitoring"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Measurement OR Testing",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Mechanical testing"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Measurement OR Testing",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Residual stress measurement "
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Measurement OR Testing",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Metrology"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Measurement OR Testing",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Machine verification"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Measurement OR Testing",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "In-process inspection technologies"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Measurement OR Testing",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "In-process monitoring "
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Measurement OR Testing",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Surface metrology"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Measurement OR Testing",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Non Destructive testing"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Measurement OR Testing",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Reverse Engineering"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Measurement OR Testing",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Measurement Management Systems"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Measurement OR Testing",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Verification "
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Standards"
+            },
+            {
+                "TEXT": "Artefacts"
+            }
+        ]
+    },
+    {
+        "Tier1": "Measurement OR Testing",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Molecular Topollogy"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Biomolecules"
+            }
+        ]
+    },
+    {
+        "Tier1": "Measurement OR Testing",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Genomes "
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Additive Manufacturing OR 3D printing OR 3DP",
+        "Tier1Human": "Additive Manufacturing",
+        "Tier2": [
+            {
+                "TEXT": "Vat photopolymerisation"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Stereolithography"
+            },
+            {
+                "TEXT": "Digital Light Processing"
+            },
+            {
+                "TEXT": "Continuous Digital Light Processing"
+            }
+        ]
+    },
+    {
+        "Tier1": "Additive Manufacturing OR 3D printing OR 3DP",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Material Extrusion (FDM)"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Additive Manufacturing OR 3D printing OR 3DP",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Material Jetting"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "PolyJet technology"
+            },
+            {
+                "TEXT": "NanoParticle Jetting (NPJ)"
+            },
+            {
+                "TEXT": "Drop-On Demand (DOD)"
+            }
+        ]
+    },
+    {
+        "Tier1": "Additive Manufacturing OR 3D printing OR 3DP",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Binder Jetting"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Furan"
+            },
+            {
+                "TEXT": "Silicate Binder"
+            },
+            {
+                "TEXT": "Phenolic Binder"
+            },
+            {
+                "TEXT": "Aqueous-Based Binder"
+            }
+        ]
+    },
+    {
+        "Tier1": "Additive Manufacturing OR 3D printing OR 3DP",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Powder bed fusion"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Laser Fused"
+            },
+            {
+                "TEXT": "Electron Beam fused"
+            },
+            {
+                "TEXT": "Fused with agent and energy"
+            },
+            {
+                "TEXT": "Thermally fused"
+            }
+        ]
+    },
+    {
+        "Tier1": "Additive Manufacturing OR 3D printing OR 3DP",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Direct energy deposition"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Laser-based DED systems"
+            },
+            {
+                "TEXT": "Electron beam-based DED systems"
+            },
+            {
+                "TEXT": "Manufacturing (EBAM)"
+            }
+        ]
+    },
+    {
+        "Tier1": "Additive Manufacturing OR 3D printing OR 3DP",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Sheet lamination"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Laminated Object Manufacturing (LOM)"
+            },
+            {
+                "TEXT": "Selective Lamination Composite Object Manufacturing (SLCOM)"
+            },
+            {
+                "TEXT": "Plastic Sheet Lamination (PSL)"
+            },
+            {
+                "TEXT": "Computer-Aided Manufacturing of Laminated` Engineering Materials (CAM-LEM)"
+            },
+            {
+                "TEXT": "Selective Deposition Lamination (SDL)"
+            },
+            {
+                "TEXT": "Composite Based Additive Manufacturing (CBAM)"
+            },
+            {
+                "TEXT": "Ultrasonic Additive Manufacturing (UAM)"
+            }
+        ]
+    },
+    {
+        "Tier1": "Composites",
+        "Tier1Human": "Composites",
+        "Tier2": [
+            {
+                "TEXT": "Wet Lay-Up"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Composites",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Wet Spray-Up"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Composites",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Vacuum Infusion"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Composites",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Resin Transfer Moulding (RTM)"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Composites",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "RTM Light"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Composites",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Prepreg"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Composites",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Filament Winding"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Composites",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Moulding Compounds"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Composites",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Continuous Processes"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Pultrusion"
+            },
+            {
+                "TEXT": "Pull-winding"
+            },
+            {
+                "TEXT": "Continuous sheet"
+            },
+            {
+                "TEXT": "Continuous filament winding"
+            }
+        ]
+    },
+    {
+        "Tier1": "Composites",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Thermoplastics"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Composites",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Automated composites preforming"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Robot/press forming"
+            },
+            {
+                "TEXT": "Double diapgrahm forming"
+            }
+        ]
+    },
+    {
+        "Tier1": "Automation",
+        "Tier1Human": "Automation",
+        "Tier2": [
+            {
+                "TEXT": "Autonomous manufacturing application"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Automation",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Robotics & advanced robotics"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Automation",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Advanced Process Control"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Automation",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Bespoke automation & mechatronics"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Automation",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Factory and Assembly"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Automated assembly"
+            },
+            {
+                "TEXT": "Smart assembly and work holding"
+            },
+            {
+                "TEXT": "In-factory automated part movement"
+            }
+        ]
+    },
+    {
+        "Tier1": "Automation",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Sensors and connectivity"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Automation",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Human Robotics / Assistance Systems"
+            }
+        ],
+        "Tier3": []
+    },
+    {
+        "Tier1": "Biotech",
+        "Tier1Human": "Biotech",
+        "Tier2": [
+            {
+                "TEXT": "Fermentation / Cultivation"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Submerged"
+            },
+            {
+                "TEXT": "Solid state"
+            },
+            {
+                "TEXT": "Aerial"
+            },
+            {
+                "TEXT": "Surface"
+            }
+        ]
+    },
+    {
+        "Tier1": "Biotech",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Downstream processes"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Seperation"
+            },
+            {
+                "TEXT": "Drying"
+            },
+            {
+                "TEXT": "Purification"
+            },
+            {
+                "TEXT": "Finishing Processes"
+            }
+        ]
+    },
+    {
+        "Tier1": "Biotech",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Upstream Processes"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Alteration"
+            },
+            {
+                "TEXT": "Sterilisation"
+            }
+        ]
+    },
+    {
+        "Tier1": "Biotech",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Analysis"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Spectrometry"
+            },
+            {
+                "TEXT": "Chromatography"
+            },
+            {
+                "TEXT": "Wet Chemistry"
+            }
+        ]
+    },
+    {
+        "Tier1": "Biotech",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Culturing"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Strain Development"
+            },
+            {
+                "TEXT": "Medium development"
+            }
+        ]
+    },
+    {
+        "Tier1": "Biotech",
+        "Tier1Human": null,
+        "Tier2": [
+            {
+                "TEXT": "Process Engineering"
+            }
+        ],
+        "Tier3": [
+            {
+                "TEXT": "Modeling"
+            },
+            {
+                "TEXT": "Economic analysis"
+            }
+        ]
+    }
+]
