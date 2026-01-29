@@ -1,6 +1,10 @@
-## Verify Generation
+# Verify Generation
 
-# Compare 4 Items - Verifying Quality
+- Verifying Quality
+- Verifying Structure,Accuracy -> Extraction
+- Verify Suitable Input Text Length
+
+## Compare 4 Items - Verifying Quality
 
 - cleaning: Is clean text good or not - does it lose important info?
 - generating: Is clean text generating better results or not
@@ -25,7 +29,7 @@ Step2:
 
 ```shell
 # run__verification.sh
-CATEGORIES=("INDUSTRIES" "ACTIVITIES" "PRODUCTS" "MARKETS" "REGIONS" "MODEL" "IS_MANUFACTURING" "MANUFACTURING_PROCESSES" "TECHNICAL_CAPABILITIES" "COMPANY_SUMMARY" "COMPANY_TRADING_NAME")
+CATEGORIES=("INDUSTRIES" "ACTIVITIES" "PRODUCTS" "MARKETS" "REGIONS" "MODEL" "COMPANY_SUMMARY" "COMPANY_TRADING_NAME")
 run_all_verifications "${CATEGORIES[@]}"
 ```
 
