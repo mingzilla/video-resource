@@ -38,16 +38,11 @@ $./run__verification.sh
 =========================================
 Verification of generated data
 =========================================
-Config file: /mnt/e/code/github-release/mvp/work/llm_text_summary/scripts_pipeline_steps/p001__rtic_company_summaries/run__cleaned__extraction__config.json
-
-✓ Config loaded from: /mnt/e/code/github-release/mvp/work/llm_text_summary/scripts_pipeline_steps/p001__rtic_company_summaries/run__cleaned__extraction__config.json
-  Output DB: ../__pipelines/2026_01__p001__rtic_companies_webtext_summary/_output/step_04__rtic_company_cleaned_webtext_16k_capabilities__Dec2025.duckdb
   Table: companies
   Summary column: webtext_summary
 =========================================
 Running verification checks...
 =========================================
-✓ Output database exists: ../__pipelines/2026_01__p001__rtic_companies_webtext_summary/_output/step_04__rtic_company_cleaned_webtext_16k_capabilities__Dec2025.duckdb
 
 1. STRUCTURE VERIFICATION:
    Checking categories appear in correct order (optional categories are handled)
