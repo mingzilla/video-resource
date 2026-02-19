@@ -1,3 +1,7 @@
+## Reasons and Options
+
+Cost: HTTP, Hire, Local
+
 ### How LLM Processing works
 
 - Prefill: Processes the full input prompt in parallel, compute-intensive, high GPU utilization
