@@ -1,33 +1,40 @@
 ## Reasons and Options
 
-Cost: HTTP, Hire, Local
+|       | 1m token | 1m items |
+|-------|----------|----------|
+| HTTP  | 0.05 usd |          |
+| Hire  |          |          |
+| Local | 0        | 0        |
+
+Note: 8k tokens per item
 
 ### How LLM Processing works
+
+```text
+          Prefill     Decode
+  text -> [AAAAAA] -> [AA    ]
+                         |  |
+                         BB |
+                            CC
+```
+
+|            | input   | output |
+|------------|---------|--------|
+| processing | prefill | decode |
+| bottleneck | gpu     | vram   |
 
 - Prefill: Processes the full input prompt in parallel, compute-intensive, high GPU utilization
 - Decode: Autoregressive token generation, memory bandwidth-bound, lower GPU utilization
 
-```text
-Prefill:  ████████████████████  Compute-bound (matmuls, FLOPs maxed)
-          GPU: ~100% utilization
-          "Using all the CUDA cores"
+---
 
-Decode:   ░░░░░░░░░░░░░░░░░░░░  Memory bandwidth-bound
-          GPU: ~10-30% utilization  
-          "Waiting on VRAM → cache transfers, compute idle"
+## Performance
 
-
- Prefill     Decode
- [AAAAAA] -> [AA    ]
-                |  |
-                BB |
-                   CC
-```
-
-```text
-Prefill:  [A] → [B] → [C]  (sequential, even with NVFP4)
-Decode:   [A1+B1] → [A2+B2] → [A3+B3]  (batched together)
-```
+|               | 60 items speed | avg speed per item |
+|---------------|----------------|--------------------|
+| vllm single   | 180s           | 3s                 |
+| vllm batching | 45s            | 0.75s              |
+| ollama single | 90s            | 1.5s               |
 
 ### How NVFP4 works
 
@@ -49,3 +56,16 @@ FP16:  [VRAM] ======== 16MB ========> [Tensor Cores]  (wait...)
 FP4:   [VRAM] ==== 4MB ====> [Tensor Cores]  (done, next!)
        8M values @ 4-bit each
 ```
+
+---
+
+## Other models tried
+
+- docker-compose.gemma-2-2b.yml
+- docker-compose.qwen2.5-1.5b.yml
+- docker-compose.qwen2.5-3b.yml
+
+Comments - Results are shocking
+
+- Labels cannot maintain order
+- Too slow
