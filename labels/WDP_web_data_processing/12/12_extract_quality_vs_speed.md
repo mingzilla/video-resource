@@ -1,12 +1,15 @@
 ## Reasons and Options
 
-|       | 1m token | 1m items |
-|-------|----------|----------|
-| HTTP  | 0.05 usd |          |
-| Hire  |          |          |
-| Local | 0        | 0        |
+|              | 1m token      | apx Cost/Hour | apx s/Item | 1m items    |
+|--------------|---------------|---------------|------------|-------------|
+| HTTP         | 0.03 usd      | N/A           | —          | 240 usd     |
+| Hire RTX5090 | **0.021 usd** | 0.80          | 0.75s      | **166 usd** |
+| Hire H20     | **0.026 usd** | 2.00          | 0.38s      | **104 usd** |
+| Hire H100    | **0.010 usd** | 2.50          | 0.15s      | **83 usd**  |
+| Local        | 0             | N/A           | 0.75s      | 0           |
 
 Note: 8k tokens per item
+Estimated performance by Kimi and ChatGPT: H20=2*5090, H100=5*5090 
 
 ### How LLM Processing works
 
