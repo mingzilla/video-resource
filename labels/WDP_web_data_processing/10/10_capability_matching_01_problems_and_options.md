@@ -5,6 +5,17 @@
 10 million records
 
 ```text
+                              +--------------+
+                              |capabilities: |
+                              |[             |
+                              |  {
+                              |    "tier1": "a", "tier2": "a1",, "tier3": [...], 
+                              |    ...
+                              |  }           |
+                              |]             |
+                              +--------------+
+                                    |
+                                    v
   +---------------+           +--------------+         +----------+
   | webtext       |           | capabilities |         | matched  |
   | ~~            |           | - a          |         | - d      |
