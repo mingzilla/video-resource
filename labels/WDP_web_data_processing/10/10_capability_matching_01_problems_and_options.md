@@ -55,17 +55,20 @@ Problem: tokens, slow, hard
 ### Option 2 - Extract + RAG
 
 ```text
-  +---------------+                    +-------------------+         +----------+
-  | webtext       |                    | vdb: capabilities |         | ranked   |
-  | ~~            |                    | - a: ----         |         | - d      |
-  | ~~            |                    | - b: ----         |  ====>  | - a      |
-  |   capability  | --> capability --> | - c: ----         |         | - c      |
-  | ~~~           | LLM           vss  | - d: ----         |         |          |
-  | ~~~~~         |                    | - ...             |         |          |
-  +---------------+                    +-------------------+         +----------+
+                   +---------------+                    +--------------+         +----------+
+ [Samples]|  ----> | webtext       |                    | capabilities |         | ranked   |
+ ---------+        | ~~            |                    | - a          |         | - d      |
+                   | ~~            |                    | - b          |  ====>  | - a      |
+                   |   capability  | --> capability --> | - c          |         | - c      |
+                   | ~~~           | LLM           vss  | - d          |         |          |
+                   | ~~~~~         |                    | - ...        |         |          |
+                   +---------------+                    +--------------+         +----------+
 
-Problem: to be discussed
+(1) samples        (2) extraction       (3) input       (4) taxonomy distinction
 ```
+
+Result: not great
+Problems: to be discussed
 
 ## Verification
 
