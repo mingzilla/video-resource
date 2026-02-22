@@ -1,4 +1,28 @@
-## Reasons and Options
+## Prompt and Model
+
+```text
+                   +---------------+
+ [Samples]|  ----> | webtext       |
+ ---------+        | ~~            |
+                   | ~~            |
+                   |   capability  | + [prompt_template.md] --> capability
+                   | ~~~           |                        LLM
+                   | ~~~~~         |
+                   +---------------+
+```
+
+| Aspect                  | Qwen 14b        | Qwen 32b     | Llama 3.2:3b |
+|-------------------------|-----------------|--------------|--------------|
+| **Speed**               | Faster          | Slower       | Fastest      |
+| **Format compliance**   | Good            | Better       | Poor         |
+| **Category separation** | Mixed           | Better       | Poor         |
+| **Inference control**   | Some leakage    | Less leakage | High leakage |
+| **Summary quality**     | Good            | Good         | Mixed        |
+| **Overall**             | ⚠️ **Marginal** | ✅ **Best**   | ❌ **Avoid**  |
+
+---
+
+## 1 Million Record Cost Estimate
 
 |              | 1m token      | apx Cost/Hour | apx s/Item | 1m items    |
 |--------------|---------------|---------------|------------|-------------|
@@ -9,9 +33,11 @@
 | Local        | 0             | N/A           | 0.75s      | 0           |
 
 Note: 8k tokens per item
-Estimated performance by Kimi and ChatGPT: H20=2*5090, H100=5*5090 
+Estimated performance by Kimi and ChatGPT: H20=2*5090, H100=5*5090
 
-### How LLM Processing works
+---
+
+## How LLM Processing works
 
 ```text
           Prefill     Decode
@@ -59,16 +85,3 @@ FP16:  [VRAM] ======== 16MB ========> [Tensor Cores]  (wait...)
 FP4:   [VRAM] ==== 4MB ====> [Tensor Cores]  (done, next!)
        8M values @ 4-bit each
 ```
-
----
-
-## Other models tried
-
-- docker-compose.gemma-2-2b.yml
-- docker-compose.qwen2.5-1.5b.yml
-- docker-compose.qwen2.5-3b.yml
-
-Comments - Results are shocking
-
-- Labels cannot maintain order
-- Too slow
