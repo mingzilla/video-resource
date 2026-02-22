@@ -2,8 +2,6 @@
 
 ## Illustration of Problem
 
-10 million records
-
 ```text
                               +--------------+
                               |capabilities: |
@@ -14,8 +12,8 @@
                               |  }           |
                               |]             |
                               +--------------+
-                                    |
-                                    v
+  10 million records                 |
+          |                          v
   +---------------+           +--------------+         +----------+
   | webtext       |           | capabilities |         | matched  |
   | ~~            |           | - a          |         | - d      |
