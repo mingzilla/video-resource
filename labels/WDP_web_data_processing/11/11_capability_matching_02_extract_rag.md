@@ -15,6 +15,14 @@
 (1) samples        (2) extraction       (3) input       (4) taxonomy distinction
 ```
 
+- 1 [sample] - sample test data targeting capabilities vss
+- 2 [extract] - (prmopt + llm) + select a model, use test data to extract labels
+- 3 [input] - what combination? summary, product, capabilities
+- 4 [vdb] - vss to get ranked related capabilities
+
+- [LLM] - evaluate ranked related capabilities
+- [LLM] - evaluate other fields
+
 ## Have I done it well or not?
 
 ### Sample Selection

@@ -31,14 +31,14 @@ No Explanation - Bad
   +---------------+     +--------------+
 
 With Explanation - long, expensive
-  +---------------+     +--------------+
-  | webtext       |     | capabilities |
-  | ~~            |     | - a: ----    |
-  | ~~            |  +  | - b: ----    | + [prompt] ===> [LLM - Deepseek]
-  |   capability  |     | - c: ----    |
-  | ~~~           |     | - d: ----    |
-  | ~~~~~         |     | - ...        |
-  +---------------+     +--------------+
+  +---------------+     +------------------+
+  | webtext       |     | capabilities.csv |
+  | ~~            |     | - a: ----        |
+  | ~~            |  +  | - b: ----        | + [prompt] ===> [LLM - Deepseek]
+  |   capability  |     | - c: ----        |
+  | ~~~           |     | - d: ----        |
+  | ~~~~~         |     | - ...            |
+  +---------------+     +------------------+
 ```
 
 Problem: tokens, slow, hard
@@ -46,14 +46,14 @@ Problem: tokens, slow, hard
 ### Option 2 - Extract + RAG
 
 ```text
-  +---------------+                    +--------------+         +----------+
-  | webtext       |                    | capabilities |         | ranked   |
-  | ~~            |                    | - a: ----    |         | - d      |
-  | ~~            |                    | - b: ----    |  ====>  | - a      |
-  |   capability  | --> capability --> | - c: ----    |         | - c      |
-  | ~~~           | LLM           vss  | - d: ----    |         |          |
-  | ~~~~~         |                    | - ...        |         |          |
-  +---------------+                    +--------------+         +----------+
+  +---------------+                    +-------------------+         +----------+
+  | webtext       |                    | vdb: capabilities |         | ranked   |
+  | ~~            |                    | - a: ----         |         | - d      |
+  | ~~            |                    | - b: ----         |  ====>  | - a      |
+  |   capability  | --> capability --> | - c: ----         |         | - c      |
+  | ~~~           | LLM           vss  | - d: ----         |         |          |
+  | ~~~~~         |                    | - ...             |         |          |
+  +---------------+                    +-------------------+         +----------+
 
 Problem: to be discussed
 ```
@@ -62,8 +62,8 @@ Problem: to be discussed
 
 ```text
 [webtext]      --+
-[capabilities] --+   correct?
-[prompt]       --+ ===========> [LLM] 
+[capabilities] --+   question: is it correct?
+[prompt]       --+ ============================> [LLM] 
 [result]       --+ 
 
 - Try this with many good records
