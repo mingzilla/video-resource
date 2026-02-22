@@ -24,6 +24,8 @@
   +---------------+           +--------------+         +----------+
 ```
 
+---
+
 ## Potential Solutions
 
 ### Option 1 - Send ALL
@@ -52,15 +54,17 @@ With Explanation - long, expensive
 
 Problem: tokens, slow, hard
 
+---
+
 ### Option 2 - Extract + RAG
 
 ```text
                    +---------------+                    +--------------+         +----------+
  [Samples]|  ----> | webtext       |                    | capabilities |         | ranked   |
- ---------+        | ~~            |                    | - a          |         | - d      |
-                   | ~~            |                    | - b          |  ====>  | - a      |
-                   |   capability  | --> capability --> | - c          |         | - c      |
-                   | ~~~           | LLM           vss  | - d          |         |          |
+ ---------+        | ~~            |                    | - a: ----    |         | - d      |
+                   | ~~            |                    | - b: ----    |  ====>  | - a      |
+                   |   capability  | --> capability --> | - c: ----    |         | - c      |
+                   | ~~~           | LLM           vss  | - d: ----    |         |          |
                    | ~~~~~         |                    | - ...        |         |          |
                    +---------------+                    +--------------+         +----------+
 
@@ -69,6 +73,21 @@ Problem: tokens, slow, hard
 
 Result: not great
 Problems: to be discussed
+
+---
+
+### Option 3 - Fine Tune Model
+
+```text
+                   +---------------+                +----------+
+ [Samples]|  ----> | webtext       |                | matched  |
+ ---------+        | ~~            |                | - d      |
+                   | ~~            | --> [LLM] ===> | - a      |
+                   |   capability  |   our model    | - c      |
+                   | ~~~           |                |          |
+                   | ~~~~~         |                |          |
+                   +---------------+                +----------+
+```
 
 ## Verification
 
