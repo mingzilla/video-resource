@@ -85,3 +85,13 @@ FP16:  [VRAM] ======== 16MB ========> [Tensor Cores]  (wait...)
 FP4:   [VRAM] ==== 4MB ====> [Tensor Cores]  (done, next!)
        8M values @ 4-bit each
 ```
+
+### FlashAttention
+
+FlashAttention is an algorithmic optimization for the attention mechanism in Transformers
+
+| Version               | Year | Key Innovation                          | GPU Utilization | Speed vs Vanilla          |
+|-----------------------|------|-----------------------------------------|-----------------|---------------------------|
+| **FlashAttention v1** | 2022 | Tiling + online softmax                 | ~25% (A100)     | 3-4× faster               |
+| **FlashAttention v2** | 2023 | Better parallelism, deferred softmax    | 50-70% (A100)   | **2× v1**                 |
+| **FlashAttention v3** | 2024 | Asynchronous execution, FP8/FP4 support | **75% (H100)**  | **2× v2, 1.2 PFLOPS FP8** |
