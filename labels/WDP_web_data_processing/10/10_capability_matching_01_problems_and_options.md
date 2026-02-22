@@ -2,6 +2,8 @@
 
 ## Illustration of Problem
 
+10 million records
+
 ```text
   +---------------+           +--------------+         +----------+
   | webtext       |           | capabilities |         | matched  |
@@ -15,23 +17,41 @@
 
 ## Potential Solutions
 
-### Solution 1 - Send ALL
+### Option 1 - Send ALL
 
 ```text
-[webtext] + [capabilities] + [prompt] ===> [LLM - Deepseek]
+No Explanation - Bad
+  +---------------+     +--------------+
+  | webtext       |     | capabilities |
+  | ~~            |     | - a          |
+  | ~~            |  +  | - b          | + [prompt] ===> [LLM - Deepseek]
+  |   capability  |     | - c          |
+  | ~~~           |     | - d          |
+  | ~~~~~         |     | - ...        |
+  +---------------+     +--------------+
+
+With Explanation - long, expensive
+  +---------------+     +--------------+
+  | webtext       |     | capabilities |
+  | ~~            |     | - a: ----    |
+  | ~~            |  +  | - b: ----    | + [prompt] ===> [LLM - Deepseek]
+  |   capability  |     | - c: ----    |
+  | ~~~           |     | - d: ----    |
+  | ~~~~~         |     | - ...        |
+  +---------------+     +--------------+
 ```
 
 Problem: tokens, slow, hard
 
-### Solution 2 - Extract + RAG
+### Option 2 - Extract + RAG
 
 ```text
   +---------------+                    +--------------+         +----------+
   | webtext       |                    | capabilities |         | ranked   |
-  | ~~            |                    | - a          |         | - d      |
-  | ~~            |                    | - b          |  ====>  | - a      |
-  |   capability  | --> capability --> | - c          |         | - c      |
-  | ~~~           | LLM           vss  | - d          |         |          |
+  | ~~            |                    | - a: ----    |         | - d      |
+  | ~~            |                    | - b: ----    |  ====>  | - a      |
+  |   capability  | --> capability --> | - c: ----    |         | - c      |
+  | ~~~           | LLM           vss  | - d: ----    |         |          |
   | ~~~~~         |                    | - ...        |         |          |
   +---------------+                    +--------------+         +----------+
 
