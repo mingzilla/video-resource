@@ -1,3 +1,11 @@
+## Quality and Speed
+
+```text
+Quality - Models
+Cost - HTTP, Hire, Local
+Speed - How LLM works, NVFP4, FlashAttention
+```
+
 ## Prompt and Model
 
 ```text
