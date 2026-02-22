@@ -1,0 +1,24 @@
+services:
+  vllm-llama3_2-nvfp4:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: vllm-llama3_2-nvfp4:local
+    container_name: vllm-llama3_2-nvfp4
+    ports:
+      - "30200:8000"
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=0
+      - CUDA_VISIBLE_DEVICES=0
+      - MAX_MODEL_LEN=8192
+      - VLLM_FLASH_ATTN_VERSION=2
+      - GPU_MEMORY_UTILIZATION=0.80
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [ gpu ]
+    ipc: host
+    restart: unless-stopped
