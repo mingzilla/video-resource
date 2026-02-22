@@ -33,7 +33,7 @@
 | Local        | 0             | N/A           | 0.75s      | 0           |
 
 Note: 8k tokens per item
-Estimated performance by Kimi and ChatGPT: H20=2*5090, H100=5*5090
+Estimated performance by Kimi and ChatGPT: H20=2x5090, H100=5x5090
 
 ---
 
