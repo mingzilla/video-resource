@@ -6,7 +6,7 @@ Cost - HTTP, Hire, Local
 Speed - How LLM works, NVFP4, FlashAttention
 ```
 
-## Prompt and Model
+## Prompt and Model for Text Extraction
 
 ```text
                    +---------------+
