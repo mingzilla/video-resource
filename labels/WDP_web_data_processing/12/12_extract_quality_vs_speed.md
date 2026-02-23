@@ -103,3 +103,18 @@ FlashAttention is an algorithmic optimization for the attention mechanism in Tra
 | **FlashAttention v1** | 2022 | Tiling + online softmax                 | ~25% (A100)     | 3-4× faster               |
 | **FlashAttention v2** | 2023 | Better parallelism, deferred softmax    | 50-70% (A100)   | **2× v1**                 |
 | **FlashAttention v3** | 2024 | Asynchronous execution, FP8/FP4 support | **75% (H100)**  | **2× v2, 1.2 PFLOPS FP8** |
+
+### vLLM v0.15.1 NVFP4 support for 50x0 NVidia Graphic Card Issue
+
+| Card                      | Compute Capability | SM Version | Affected? |
+|---------------------------|--------------------|------------|-----------|
+| RTX 5090 (laptop/desktop) | 12.0               | SM120      | ✅ Yes     |
+| **RTX 4000 Blackwell**    | **12.0**           | **SM120**  | **✅ Yes** |
+| RTX 6000 Blackwell        | 12.0               | SM120      | ✅ Yes     |
+| B200 (data center)        | 10.0               | SM100      | ❌ No      |
+
+All **consumer/workstation Blackwell GPUs** use SM120, which vLLM's NVFP4 backend initially didn't recognize .
+
+- vLLM v0.15.1 - Does not have NVFP4 support for **SM120** (compute capability 12.0) **Non MoE models**
+- vLLM v0.15.1 - Only **MoE models** on SM120 got native NVFP4 support
+- The general MXFP4 backend selection fix (PR #31089) that adds SM120 to the recognized list for **all model types** appears to still be pending or only in main branch.
