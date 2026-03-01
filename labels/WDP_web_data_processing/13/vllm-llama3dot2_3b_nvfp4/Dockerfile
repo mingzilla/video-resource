@@ -1,4 +1,4 @@
-FROM vllm/vllm-openai:v0.15.1
+FROM vllm/vllm-openai:v0.16.0
 
 # Install HuggingFace tools
 RUN pip install --no-cache-dir huggingface-hub hf-transfer

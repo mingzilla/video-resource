@@ -11,7 +11,6 @@ services:
       - NVIDIA_VISIBLE_DEVICES=0
       - CUDA_VISIBLE_DEVICES=0
       - MAX_MODEL_LEN=8192
-      - VLLM_FLASH_ATTN_VERSION=2
       - GPU_MEMORY_UTILIZATION=0.80
     deploy:
       resources:
@@ -22,3 +21,9 @@ services:
               capabilities: [ gpu ]
     ipc: host
     restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8000/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 120s
