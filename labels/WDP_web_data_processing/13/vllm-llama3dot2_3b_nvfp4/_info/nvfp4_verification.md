@@ -1,10 +1,24 @@
 # NVFP4 Verification Guide
 
-Use this when you need to confirm FP4 is active. Typicall needed when
+## Making use of NVFP4
+
+**Requirement**
+
+```text
++---------------------------+
+|  Blackwell GPU            |
+|  [vLLM]----[nvfp4-model]  |
++---------------------------+
+```
+
+**When:**
+Use this when you need to confirm FP4 is active. Typically needed when
 
 - vLLM upgrade
 - model change
 - or hardware change
+
+**What this does:**
 
 The script does not emit a pass/fail verdict. You read the kernel table it produces and
 look for specific entries explained below. This is intentional: kernel names can change
