@@ -115,9 +115,7 @@ Processing [/tmp/kern_trace.sqlite] with [/opt/nvidia/nsight-systems/2025.5.2/ho
       0.0             3861          2     1930.5     1930.5      1868      1993         88.4  void at::native::vectorized_elementwise_kernel<(int)2, at::native::CUDAFunctorOnOther_add<long>, st…
       0.0             3580          2     1790.0     1790.0      1743      1837         66.5  void at::native::vectorized_elementwise_kernel<(int)2, at::native::<unnamed>::where_kernel_impl(at:…
 
-====== FP4 Kernel Check ======
-RESULT: No FP4 kernel names found.
-  Note: some vendor kernels use opaque names — absence is not conclusive.
+Inspect the table above. See nvfp4_verification.md for what to look for.
 
 Restarting original vLLM container...
 Done. Wait a few minutes for vLLM to be ready.
