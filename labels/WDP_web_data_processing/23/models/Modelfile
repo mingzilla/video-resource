@@ -1,0 +1,2 @@
+FROM /mnt/e/code/github-release/mvp/work/llm_fine_tuning/_output/ex_001__train/gguf_gguf/llama-3.2-3b-instruct.Q4_K_M.gguf
+SYSTEM "Extract company information from the website content in British English."
