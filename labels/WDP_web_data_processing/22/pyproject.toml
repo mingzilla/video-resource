@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=64.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm_fine_tuning"
+version = "0.1.0"
+description = "LLM Fine Tuning"
+authors = [
+    { name = "Ming Huang" }
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "python-dotenv>=1.0.0",
+    # ML — unsloth must be installed separately with the correct CUDA variant, e.g.:
+    #   pip install "unsloth[cu126-torch260]"   (CUDA 12.6, PyTorch 2.6, RTX 5090)
+    #   pip install unsloth                      (auto-detect)
+    "unsloth",
+    "transformers>=4.45.0",
+    "trl>=0.15.0",
+    "datasets>=3.0.0",
+    "peft>=0.13.0",
+    "bitsandbytes>=0.44.0",
+    "accelerate>=1.0.0",
+]
+# Note: Dependencies are managed by uv add and will be populated here
+
+[project.optional-dependencies]
+dev = []  # Will be populated by uv add --dev
+
+[tool.uv]
+link-mode = "copy"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+packages = []
+
+[tool.ruff]
+line-length = 999
+target-version = "py313"
+fix = true  # Auto-fix issues when possible
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "integration", "functional"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+pythonpath = [".", "src"]

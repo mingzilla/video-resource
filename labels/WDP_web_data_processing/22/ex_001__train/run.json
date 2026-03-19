@@ -1,0 +1,21 @@
+{
+  "jsonl_path": "datasets/dataset_v1.jsonl",
+  "base_model": "unsloth/Llama-3.2-3B-Instruct",
+  "output_dir": "_output/ex_001__train",
+
+  "Model": "====",
+  "max_seq_length": 4096,
+  "load_in_4bit": true,
+
+  "LoRA": "====",
+  "lora_rank": 16,
+  "lora_alpha": 16,
+
+  "Training": "====",
+  "num_epochs": 3,
+  "per_device_train_batch_size": 2,
+  "gradient_accumulation_steps": 4,
+  "warmup_steps": 5,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.01
+}

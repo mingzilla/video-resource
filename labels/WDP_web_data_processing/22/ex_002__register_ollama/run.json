@@ -1,0 +1,6 @@
+{
+  "gguf_dir": "_output/ex_001__train/gguf_gguf",
+  "ollama_model_name": "company-extractor:llama3.2-3b-v01",
+  "ollama_docker_container": "ollama-test",
+  "system_prompt": "Extract company information from the website content in British English."
+}
