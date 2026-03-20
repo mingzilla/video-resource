@@ -36,15 +36,13 @@ as-is (no teacher fine-tuning) with frontier model verification.
 
 ## Student Training Loop
 
-| Cycle | input (created by qwen2.5:32b + verified) | model to fine-tune  | result          | stable? |
-|-------|-------------------------------------------|---------------------|-----------------|---------|
-| 1     | 500 perfect summaries                     | llama3.2:3b         | llama3.2:3b v+1 | check   |
-| 2     | 1000 perfect summaries                    | llama3.2:3b v+1     | llama3.2:3b v+2 | check   |
-| 3     | 1500 perfect summaries                    | llama3.2:3b v+2     | llama3.2:3b v+3 | check   |
-| ...   | (not enough perfect summaries)            |                     | ...             | ...     |
-| n     |                                           | llama3.2:3b v+(n-1) | llama3.2:3b v+n | stop    |
-
-**Not enough perfect summaries:** run more webtexts through qwen2.5:32b + Step 2 verification to grow the dataset.
+| Cycle | input (created by kimi)        | model to fine-tune  | result          | stable? |
+|-------|--------------------------------|---------------------|-----------------|---------|
+| 1     | 500 perfect summaries          | llama3.2:3b         | llama3.2:3b v+1 | check   |
+| 2     | 1000 perfect summaries         | llama3.2:3b v+1     | llama3.2:3b v+2 | check   |
+| 3     | 1500 perfect summaries         | llama3.2:3b v+2     | llama3.2:3b v+3 | check   |
+| ...   | (not enough perfect summaries) |                     | ...             | ...     |
+| n     |                                | llama3.2:3b v+(n-1) | llama3.2:3b v+n | stop    |
 
 **Stable:** further training cycles no longer improve output quality. Stop.
 
