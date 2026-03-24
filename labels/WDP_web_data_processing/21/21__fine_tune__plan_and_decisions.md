@@ -53,7 +53,7 @@ Use the big model to label. Train the small model to replicate. Keep the speed, 
 
 ---
 
-## Training Data Format
+## Decision 1 — Training Data Format
 
 One training record = one JSONL line:
 
@@ -102,7 +102,7 @@ unnecessary — the model learns the output structure directly from examples.
 
 ---
 
-## Output Format Rules
+## Decision 2 — Output Format
 
 ### Always emit every label, even if empty
 
@@ -142,7 +142,7 @@ Skip empty labels in training = model learns to sometimes skip them = unpredicta
 
 ---
 
-## Training Setup
+## Decision 3 — Training Setup
 
 | Parameter          | Value                     |
 |--------------------|---------------------------|
