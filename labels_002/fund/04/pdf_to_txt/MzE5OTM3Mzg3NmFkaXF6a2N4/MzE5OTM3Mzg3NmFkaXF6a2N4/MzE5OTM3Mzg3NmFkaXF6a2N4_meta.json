@@ -1,0 +1,255 @@
+{
+  "table_of_contents": [
+    {
+      "title": "Return of Allotment of Shares",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          292.25440806045344,
+          76.47729296527159
+        ],
+        [
+          507.323677581864,
+          76.47729296527159
+        ],
+        [
+          507.323677581864,
+          90.72306322350846
+        ],
+        [
+          292.25440806045344,
+          90.72306322350846
+        ]
+      ]
+    },
+    {
+      "title": "Shares Allotted (including bonus shares)",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          26.227959697733,
+          259.013671875
+        ],
+        [
+          380.6801007556675,
+          259.013671875
+        ],
+        [
+          380.6801007556675,
+          278.1674087266251
+        ],
+        [
+          26.227959697733,
+          278.1674087266251
+        ]
+      ]
+    },
+    {
+      "title": "Statement of Capital (Share Capital)",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          26.728515625,
+          34.48975957257346
+        ],
+        [
+          334.9685138539043,
+          34.48975957257346
+        ],
+        [
+          334.9685138539043,
+          53.23419412288513
+        ],
+        [
+          26.728515625,
+          53.23419412288513
+        ]
+      ]
+    },
+    {
+      "title": "Statement of Capital (Totals)",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          26.227959697733,
+          35.23953695458593
+        ],
+        [
+          274.2695214105794,
+          33.739982190560994
+        ],
+        [
+          274.2695214105794,
+          53.983971504897596
+        ],
+        [
+          26.227959697733,
+          55.483526268922525
+        ]
+      ]
+    },
+    {
+      "title": "Authorisation",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          245.7934508816121,
+          185.9447907390917
+        ],
+        [
+          340.963476070529,
+          184.44523597506677
+        ],
+        [
+          340.963476070529,
+          198.98828125
+        ],
+        [
+          245.7934508816121,
+          200.94033837934103
+        ]
+      ]
+    },
+    {
+      "title": "Authenticated",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          26.227959697733,
+          202.43989314336596
+        ],
+        [
+          103.41309823677582,
+          202.43989314336596
+        ],
+        [
+          103.41309823677582,
+          214.43633125556545
+        ],
+        [
+          26.227959697733,
+          214.43633125556545
+        ]
+      ]
+    }
+  ],
+  "page_stats": [
+    {
+      "page_id": 0,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          41
+        ],
+        [
+          "Span",
+          17
+        ],
+        [
+          "Text",
+          11
+        ],
+        [
+          "PageFooter",
+          4
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "Picture",
+          1
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 1,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          60
+        ],
+        [
+          "Span",
+          19
+        ],
+        [
+          "Text",
+          14
+        ],
+        [
+          "PageFooter",
+          4
+        ],
+        [
+          "SectionHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 2,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          26
+        ],
+        [
+          "Span",
+          12
+        ],
+        [
+          "Text",
+          5
+        ],
+        [
+          "PageFooter",
+          4
+        ],
+        [
+          "SectionHeader",
+          3
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    }
+  ],
+  "debug_data_path": "debug_data/MzE5OTM3Mzg3NmFkaXF6a2N4"
+}
