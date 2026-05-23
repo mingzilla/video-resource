@@ -28,16 +28,21 @@
 
 ```text
  source data            
- +------+  ->  p1w1  +-+----+ 5min
- |------|  ->  p1w2  +---+----+--+ 8min
- |------|  ->  p2w1  +--+-+----+ 7min
- +------+
+ +------+  ->  p1w1  +-+----+ 3min
+ |------|  ->  p1w2  +---+----+--+ 5min
+ |------|  ->  p2w1  +--+-+----+ 4min
+ |------|  ->  p2w2  +-+-+----+ 4min
+ |------|  ->  p1w1           +-+-+ 1min
+ |------|  ->  p2w2             +-+-+----+ 4min
+ |------|  ->  p2w1              +--+-+----+ 4min
+ |------|  ->  p1w2                +---+----+--+ 5min
+ +------+  ->  p1w1                 +-+-+ 1min
 ```
 
 ### Other Consideration
 
 ```text
-- pause resume       |
-- keep track of cost | => 1 duckdb
-- timeout            |
+- pause resume       (current with order) |
+- keep track of cost                      | => 1 duckdb
+- timeout                                 |
 ```
