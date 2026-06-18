@@ -1,0 +1,119 @@
+# Tool-call analysis — 04699001 (`claude -p` run, dseek_16__caching)
+
+Session `1cb57022-85e0-4d76-8833-2c9b298da027` — 39 API calls (45 tool calls incl. 7 parallel siblings), 244s. (`num_turns` 46 = 1 kickoff + 45 tool results.) CACHING NEAR-PERFECT: fresh in only 53,276 tok for the whole run.
+Generated per `work/investment_data/_docs/v032_claude_p_skills/instruction__optimisation__list_tools.md`.
+
+## How to read
+
+| Column           | Explanation                                                                                                                                                 |
+|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| #                | API call index (= one model round trip = one assistant turn); `num_turns` counts user messages instead (kickoff + one tool_result per individual tool call) |
+| Type             | first tool's name; `(none)` = flat LLM request; `[+N parallel]` in Purpose = N sibling calls in the same round trip                                         |
+| Purpose          | what the call does AND why (failed calls marked FAILED; SPILLED = result persisted to disk, only a 2KB stub in context)                                     |
+| In (chars)       | tool-argument JSON size, summed over parallel siblings; 0 for `(none)`                                                                                      |
+| Out (chars)      | tool result size as carried in context, summed over siblings; for `(none)` the assistant text size                                                          |
+| Tool s           | tool execution time (first result ts − call ts); for a blocking sub-agent spawn = the whole sub-agent run                                                   |
+| Think s          | gap since previous result — model latency + generation time                                                                                                 |
+| Net in (tok)     | context growth vs previous call = (Fresh+Cache read) − previous total. Noisy ±~300 from cache bucketing; treat small negatives as 0                         |
+| Fresh in (tok)   | uncached input, billed full price. Health check: Fresh − Net ≈ 0 → caching works; ≈ previous total → full cache miss (whole context re-billed)              |
+| Cache read (tok) | input served from cache (~0.1× price); bucketed counts                                                                                                      |
+| Out (tok)        | generated tokens — includes the tool_use envelope (~100–150/tool) + any preamble text                                                                       |
+| Waste            | `N` (not wasteful) / `P reason` (partially wasted, with reasoning) / `Y reason` (yes — wasted, with reasoning)                                              |
+
+What is wasteful:
+
+| Test                  | Signal in the transcript                                                                                                  | Verdict                                                                                                                                 |
+|-----------------------|---------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| Recovery churn        | failed call → retry/re-write sequence                                                                                     | Y — the fix belongs in the skill; failed outputs are carried forever                                                                    |
+| Duplicate acquisition | same bytes entering context twice (re-reads, spill-file reads, duplicate writes)                                          | Y on the redundant copy                                                                                                                 |
+| Over-fetch            | result fields never referenced downstream                                                                                 | P/Y — full dumps where targeted queries would do                                                                                        |
+| Source ownership      | an agent pulling content of a source another agent owns (`sub`-routed source content in main; non-1D sources in a 1D sub) | Y wholesale / P narrow-but-out-of-scope; the legitimate form for main is a narrow filtered cross-check                                  |
+| Turn fragmentation    | sequential independent calls that could batch                                                                             | P — waste is the extra round trip, not the content                                                                                      |
+| Script-source read    | Read/grep of a `scripts/*` source file                                                                                    | Judge against the skill's scripts-reading protocol (`rule__task_contract.md`): N if marked read-once (ledger__write.py), Y if black-box |
+
+## Main agent
+
+| #  | Type   | Purpose                                                                                    | In (chars) | Out (chars) | Tool s | Think s | Net in (tok) | Fresh in (tok) | Cache read (tok) | Out (tok)  | Waste                                                                                                       |
+|----|--------|--------------------------------------------------------------------------------------------|------------|-------------|--------|---------|--------------|----------------|------------------|------------|-------------------------------------------------------------------------------------------------------------|
+| 01 | Read   | Read SKILL.md — skill entry + navigator                                                    | 147        | 22,670      | 0.4    | —       | 17,530       | 122            | 17,408           | 97         | N                                                                                                           |
+| 02 | Read   | [+1 parallel] Read rule__task_contract.md + mkdir workdir                                  | 374        | 9,514       | 0.4    | 2.5     | 5,527        | 5,649          | 17,408           | 210        | N                                                                                                           |
+| 03 | Read   | [+2 parallel] Read action brief + rule__round_definition + rule__output_protocol — batched | 496        | 22,540      | 0.8    | 3.0     | 2,774        | 2,791          | 23,040           | 255        | N                                                                                                           |
+| 04 | Bash   | build_company_brief.sh → brief.json                                                        | 670        | 206         | 2.1    | 3.8     | 6,337        | 6,568          | 25,600           | 297        | N                                                                                                           |
+| 05 | Read   | Read brief.json — came back malformed (531 chars)                                          | 166        | 531         | 0.5    | 3.6     | 383          | 551            | 32,000           | 103        | N                                                                                                           |
+| 06 | Bash   | duckdb: check records exist                                                                | 402        | 230         | 1.0    | 3.4     | 318          | 357            | 32,512           | 196        | N                                                                                                           |
+| 07 | Read   | Read build_company_brief.sh SOURCE — to debug the bad brief                                | 169        | 5,184       | 0.5    | 3.7     | 317          | 418            | 32,768           | 153        | Y — black-box read; though triggered by a real script failure, the eventual fix was simply re-running (#13) |
+| 08 | Bash   | test census query directly                                                                 | 434        | 326         | 1.1    | 3.6     | 1,735        | 1,897          | 33,024           | 228        | P — script-debug churn                                                                                      |
+| 09 | Bash   | debug census query output                                                                  | 698        | 349         | 1.6    | 6.1     | 366          | 471            | 34,816           | 443        | P — script-debug churn                                                                                      |
+| 10 | Bash   | debug the script's q() function                                                            | 786        | 685         | 1.7    | 3.4     | 591          | 806            | 35,072           | 379        | P — script-debug churn (probing internals of a black-box script)                                            |
+| 11 | Bash   | debug pre-check step                                                                       | 699        | 4           | 1.6    | 4.1     | 623          | 661            | 35,840           | 395        | P — script-debug churn                                                                                      |
+| 12 | Bash   | test q() + truncation logic                                                                | 592        | 4           | 1.7    | 2.5     | 411          | 560            | 36,352           | 252        | P — script-debug churn                                                                                      |
+| 13 | Bash   | re-run build_company_brief.sh — clean brief this time                                      | 652        | 206         | 2.0    | 3.7     | 267          | 315            | 36,864           | 376        | N                                                                                                           |
+| 14 | Read   | Read brief.json (good)                                                                     | 166        | 2,934       | 1.1    | 3.9     | 463          | 522            | 37,120           | 131        | N                                                                                                           |
+| 15 | Bash   | main__sub_agent__decision.py → plan.json                                                   | 683        | 190         | 1.6    | 6.0     | 1,078        | 1,088          | 37,632           | 763        | N                                                                                                           |
+| 16 | Read   | Read plan.json                                                                             | 165        | 602         | 0.5    | 2.6     | 848          | 912            | 38,656           | 124        | N                                                                                                           |
+| 17 | Read   | [+1 parallel] Read action 1A + ls aids                                                     | 358        | 4,698       | 0.4    | 9.8     | 361          | 505            | 39,424           | 1,226      | N                                                                                                           |
+| 18 | Read   | Read aid__1A.md                                                                            | 154        | 1,555       | 0.0    | 4.1     | 2,465        | 2,714          | 39,680           | 88         | N                                                                                                           |
+| 19 | Bash   | duckdb: dump 6 1A charges                                                                  | 686        | 773         | 1.8    | 4.3     | 485          | 639            | 42,240           | 316        | N                                                                                                           |
+| 20 | Bash   | duckdb: inspect raw JSON output                                                            | 387        | 3,833       | 0.1    | 3.6     | 560          | 687            | 42,752           | 162        | P — third view of the same 6 charges (#19→#20→#21)                                                          |
+| 21 | Bash   | python: parse + display 6 charges                                                          | 1,106      | 2,651       | 2.2    | 2.7     | 1,151        | 1,326          | 43,264           | 387        | P — churn: three calls to display 6 records                                                                 |
+| 22 | Read   | Read action__extract__acquisition.md                                                       | 170        | 5,905       | 0.4    | 11.8    | 1,053        | 1,099          | 44,544           | 1,385      | N                                                                                                           |
+| 23 | Read   | [+2 parallel] Read aids 1I/1T/1C — batched                                                 | 462        | 1,587       | 0.0    | 3.3     | 2,969        | 3,044          | 45,568           | 238        | N                                                                                                           |
+| 24 | Bash   | duckdb: list 1I records                                                                    | 646        | 527         | 1.7    | 4.3     | 686          | 914            | 48,384           | 276        | N                                                                                                           |
+| 25 | Bash   | duckdb: 1I director names                                                                  | 648        | 554         | 0.1    | 7.5     | 509          | 655            | 49,152           | 240        | P — re-pull of 1I (names) one call after listing                                                            |
+| 26 | Bash   | duckdb: full 1I dump                                                                       | 564        | 2,133       | 1.5    | 3.7     | 491          | 634            | 49,664           | 235        | P — third 1I pull (full dump)                                                                               |
+| 27 | Read   | Read action_output__merge_and_check.py SOURCE                                              | 180        | 9,410       | 0.5    | 9.8     | 1,025        | 1,147          | 50,176           | 897        | Y — protocol violation: merge_and_check.py is black-box                                                     |
+| 28 | Bash   | duckdb: 1A record_index values                                                             | 709        | 558         | 1.5    | 4.7     | 3,565        | 3,688          | 51,200           | 369        | N                                                                                                           |
+| 29 | Write  | Write 1A__output.jsonl                                                                     | 1,610      | 251         | 2.7    | 3.7     | 548          | 652            | 54,784           | 439        | N                                                                                                           |
+| 30 | Bash   | merge_and_check (1A)                                                                       | 443        | 65          | 0.9    | 4.0     | 526          | 666            | 55,296           | 190        | N                                                                                                           |
+| 31 | Bash   | cat ledger__write.py (read-once per protocol)                                              | 212        | 8,051       | 1.0    | 7.3     | 220          | 886            | 55,296           | 561        | N                                                                                                           |
+| 32 | Read   | [+1 parallel] Read result + research_notes                                                 | 350        | 1,788       | 0.5    | 3.9     | 2,695        | 2,813          | 56,064           | 335        | N                                                                                                           |
+| 33 | Bash   | ledger__write.py: set company pattern                                                      | 712        | 31          | 1.6    | 5.1     | 899          | 1,408          | 58,368           | 530        | N                                                                                                           |
+| 34 | Bash   | ledger: add suppressed records for non-action sources                                      | 2,733      | 219         | 5.5    | 4.1     | 548          | 932            | 59,392           | 874        | N                                                                                                           |
+| 35 | Bash   | ledger: add suppressed records — retry                                                     | 2,298      | 80          | 0.1    | 6.4     | 950          | 1,370          | 59,904           | 710        | P — retry of the suppressed-records write                                                                   |
+| 36 | Read   | Read research_notes — verify                                                               | 183        | 4,229       | 0.4    | 2.6     | 757          | 79             | 61,952           | 109        | N                                                                                                           |
+| 37 | Bash   | print one-line summary                                                                     | 359        | 274         | 0.7    | 6.0     | 1,472        | 1,551          | 61,952           | 575        | N                                                                                                           |
+| 38 | Bash   | integrity check on outputs                                                                 | 1,576      | 720         | 3.2    | 5.3     | 664          | 679            | 63,488           | 555        | N                                                                                                           |
+| 39 | (none) | final answer                                                                               | 0          | 781         | —      | 5.1     | 821          | 1,500          | 63,488           | 220        | N                                                                                                           |
+|    |        | **Totals**                                                                                 | **23,845** | **116,848** |        |         |              | **53,276**     | **1,702,144**    | **15,319** |                                                                                                             |
+
+Cache pattern (`H` = cache_read>0): `HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH` — 39 hits / 0 misses — every call served from cache.
+
+Good behaviours: near-perfect prefix caching makes the whole run cost $1.50; reads batched (#2, #3, #17, #23, #32); ledger read-once + pattern first-try. The waste is concentrated in the brief-script failure (#5–13: source read + 5 debug probes for what a simple re-run fixed) and triple-display churn (1A #19–21, 1I #24–26).
+
+## Sub-agents
+
+None spawned — plan.json routed every data_ref to `main`/`triage`.
+
+## Run summary
+
+| Company               | arm                   | rounds | API calls | dur (s) | out tok | in tok | cache rd | cost ($) |
+|-----------------------|-----------------------|-------:|----------:|--------:|--------:|-------:|---------:|---------:|
+| 04699001 Balloon Tree | **dseek_16__caching** |      0 |        39 |     244 |   15.3k |  0.05M |    1.70M |     1.50 |
+| 04699001 Balloon Tree | dseek_16__1ABC        |      0 |        27 |     242 |   18.3k |  0.78M |    0.27M |     4.49 |
+| 04699001 Balloon Tree | dseek_16              |      0 |        40 |     464 |   21.9k |  1.57M |    0.18M |     8.47 |
+| 04699001 Balloon Tree | caching5              |      0 |        30 |     239 |   17.6k |  0.80M |    0.53M |     4.73 |
+| 04699001 Balloon Tree | caching4              |      0 |        39 |     288 |   12.5k |  0.91M |    0.57M |     5.17 |
+
+Extended metrics:
+
+| Company               | Run                   | Rounds | Agents | API calls | Parallel | dur (s) | Fresh in | Cache read | Hit rate | Out tok | Waste Y/P | Tok-eq in |
+|-----------------------|-----------------------|-------:|-------:|----------:|---------:|--------:|---------:|-----------:|---------:|--------:|----------:|----------:|
+| 04699001 Balloon Tree | **dseek_16__caching** |      0 |      1 |        39 |        7 |     244 |    0.05M |      1.70M |    39/39 |   15.3k |      2/10 |     0.22M |
+
+Column definitions:
+
+| Column                | Definition                                                                                                                                                                         |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| API calls             | model round trips, main+sub summed (= turns: one turn is exactly one API call, possibly carrying several parallel tool calls; NOT cli.json `num_turns`, which counts tool results) |
+| rounds                | `length(result.json)` — behaviour signal; cost comparison is only valid when behaviour matches                                                                                     |
+| in tok / Fresh in     | uncached input tokens, main+sub summed (cli.json reports the main agent only)                                                                                                      |
+| cache rd / Cache read | cache-read input tokens, main+sub summed                                                                                                                                           |
+| out tok               | generated tokens, main+sub summed                                                                                                                                                  |
+| cost ($)              | fresh×$5/M + cache×$0.5/M + out×$25/M — Opus-4.5-equivalent COMPARISON CURRENCY only (real deepseek spend is on OpenRouter; cli.json's own USD is main-only and router-mispriced)  |
+| Agents                | main + sub-agents                                                                                                                                                                  |
+| Parallel              | sibling tool calls absorbed into shared API calls                                                                                                                                  |
+| Hit rate              | API calls with cache_read>0 / total                                                                                                                                                |
+| Waste Y/P             | counts of `Y` / `P` verdicts in the per-call tables                                                                                                                                |
+| Tok-eq in             | Fresh + 0.1×Cache read                                                                                                                                                             |
+
+Comparison rows included (multi-arm batch).
