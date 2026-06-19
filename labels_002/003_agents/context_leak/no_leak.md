@@ -15,7 +15,7 @@
 |   |   |-- _actions/              # Reusable actions we use to run for the project
 |   |
 |   |-- _meta__edit/               # WHAT - Used when editing `[project]`
-|   |   |-- _rules/                # Rules used for editing `[project]`, including lesson learnt
+|   |   |-- _rules/                # Rules used for editing `[project]`
 |   |   |-- _tests/                # Test code to run against project
 |   |
 |   |-- CLAUDE.md                  # Router in `[project__post_processing]`
