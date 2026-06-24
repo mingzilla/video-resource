@@ -31,11 +31,32 @@ Long session + broken cache = dominant cost.
 | 2 | **Provider lottery** | router load-balances to random upstream (different cache stores)       | §Fix 2 |
 | 3 | **Prompt drift**     | each call improvises prompt, or variable content interleaved in prefix | §Fix 3 |
 
-```text
-sub 1:  [cch=8fcf6][system][tools]["hi"]                       → provider caches this
-sub 2:  [cch=9bc5c][system][tools]["hi"]["hey"]["hi again"]    → mismatch at the hash → match stops here
-         ^^^^^^^^^^
+
+Prompt caching — two important settings to enable
+
+1. For non-anthrophic, add env var `export CLAUDE_CODE_ATTRIBUTION_HEADER=0` when running `claude -p`. Otherwise, it prefixes `cch` to EACH message
+
+```bash
+export CLAUDE_CODE_ATTRIBUTION_HEADER=0
+work/investment_data/_docs/v032_claude_p_skills/claude_p__deepseek__run.sh <company_number> <fresh_output_dir>
 ```
+
+```text
+Events:
+  user: hi  - 1 msg sent
+  claude: hey
+  user: hi again - 3 msg sent (prefix before `hi` destroys prompt caching)
+
+Problem:
+  submission 1:  [cch=8fcf6][system prompt][tools]["hi"]
+                                                            → provider caches all of this
+  submission 2:  [cch=9bc5c][system prompt][tools]["hi"]["hey"]["hi again"]
+                  ^^^^^^^^^^
+                  mismatch at token ~40 → matching stops HERE
+```
+
+2. ccr: `~/.claude-code-router/config.json` - needs to set: `"order": ["atlas-cloud", ...], "allow_fallbacks": false`
+
 
 ## How to fix each killer
 
