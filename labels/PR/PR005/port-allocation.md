@@ -54,6 +54,7 @@ Note: for llm friendly create a fixed value table like the below:
 | Qdrant HTTP | xxx10 |
 | Qdrant gRPC | xxx11 |
 | Neo4j       | xxx20 |
+| Mineru      | xxx30 |
 
 - Reason: setting a fixed value is easier to communicate with LLM
 
