@@ -1,3 +1,4 @@
+## What How Dispatch Pattern
 
 ```
 check__1D__does_it_code_or_read.py                             ← FILE (detector; classify only)
