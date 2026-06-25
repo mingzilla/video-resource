@@ -60,6 +60,10 @@ class CompanyTextCleaner:
         self.js_pattern = re.compile(r'<script[^>]*>.*?</script>', re.DOTALL | re.IGNORECASE)
         self.html_tag_pattern = re.compile(r'<[^>]+>')
         self.css_property_pattern = re.compile(r'\{[^}]*\}')
+        # A pipe before each table-cell OPEN tag (see _delimit_html_table_cells): de-fuses adjacent
+        # AND malformed cells, preserves boundaries, matches mistral's | shape. Marking the OPEN
+        # (not close) is the trick — web HTML drops </td>, never <td>. \b avoids matching <tdfoo>.
+        self.cell_open_pattern = re.compile(r'<t[dh]\b[^>]*>', re.IGNORECASE)
 
     def clean_text(
         self,
@@ -187,6 +191,15 @@ class CompanyTextCleaner:
 
         return True
 
+    def _delimit_html_table_cells(self, text: str) -> str:
+        """Insert a markdown pipe before each table-cell OPEN tag, BEFORE the tag strip, so adjacent
+        cell values can't fuse and cell boundaries survive (| GBP | 7,482,833 | 0.20 …, matching
+        mistral). Marking the OPEN (not the close) de-fuses malformed cells too: web HTML usually
+        drops the </td>, never the <td>. `<t[dh]\\b[^>]*>` covers <td>/<th> and attributed opens; the
+        \\b avoids matching <tdfoo>. Only cell-open tags touched, so all other text is byte-identical.
+        (Multi-row tables merge onto one line — pipe-separated, never fused.)"""
+        return self.cell_open_pattern.sub('| ', text)
+
     def _remove_boilerplate(self, text: str) -> str:
         """
         Remove CSS, JavaScript, HTML tags, and common metadata patterns
@@ -198,6 +211,9 @@ class CompanyTextCleaner:
 
         # Remove JavaScript blocks
         text = self.js_pattern.sub('', text)
+
+        # Pipe-delimit table cells BEFORE the tag strip so adjacent cell values can't fuse
+        text = self._delimit_html_table_cells(text)
 
         # Remove HTML tags
         text = self.html_tag_pattern.sub('', text)
