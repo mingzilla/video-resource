@@ -44,3 +44,34 @@
 ## use this for md:
 
 _notes/ai-agents/.claude/skills/project__teamwork/_meta/_role__common/ref__subscription_contract.md
+
+## More
+
+```text
+  [script already looping in background, holding `base` in memory]
+     │
+     ├─ every 2s: read file → compare to `base`
+     │     └─ same? → loop again (silent, no ping)
+     │
+  file changes
+     │
+     ├─ next poll (≤2s later): cur != base  → script decides "changed"
+     ├─ script echo/cat → writes the new content to its stdout file
+     └─ script `exit 0`         ← THIS is the doorbell
+          │
+     harness sees the background process exited
+          │
+     harness injects a `task-notification` → wakes me
+          │
+     I read the stdout file the script left behind  ← echo/cat payload consumed here
+          │
+     I re-arm a fresh watch (new baseline)
+
+  The two things people conflate:
+  - exit = the wake signal (process lifecycle — that's all the harness watches).
+  - echo/cat = the message left on the doorstep, read only after the wake.
+
+  If a script echoed but never exited, I'd never be woken — the text would just pile up in
+  the output file unseen. The exit is mandatory; the echo is optional convenience so I don't
+  have to re-read the file myself.
+```
