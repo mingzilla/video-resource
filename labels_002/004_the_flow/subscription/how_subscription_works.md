@@ -43,7 +43,7 @@
 
 ## use this for md:
 
-_notes/ai-agents/.claude/skills/project__teamwork/_meta/_role__common/ref__subscription__contract__md.md
+_notes/ai-agents/.claude/skills/project__teamwork/_meta/_mechanics__low_level/mechanics__subscription__contract__md.md
 
 ## More
 
