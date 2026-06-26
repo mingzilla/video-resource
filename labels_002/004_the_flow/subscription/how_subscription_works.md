@@ -43,35 +43,39 @@
 
 ## use this for md:
 
-_notes/ai-agents/.claude/skills/project__teamwork/_meta/_role__common/ref__subscription_contract.md
+_notes/ai-agents/.claude/skills/project__teamwork/_meta/_role__common/ref__subscription__contract__md.md
 
 ## More
 
 ```text
-  [script already looping in background, holding `base` in memory]
-     │
-     ├─ every 2s: read file → compare to `base`
-     │     └─ same? → loop again (silent, no ping)
-     │
-  file changes
-     │
-     ├─ next poll (≤2s later): cur != base  → script decides "changed"
-     ├─ script echo/cat → writes the new content to its stdout file
-     └─ script `exit 0`         ← THIS is the doorbell
-          │
-     harness sees the background process exited
-          │
-     harness injects a `task-notification` → wakes me
-          │
-     I read the stdout file the script left behind  ← echo/cat payload consumed here
-          │
-     I re-arm a fresh watch (new baseline)
+3. Your flow — correct, with two word-level fixes
 
-  The two things people conflate:
-  - exit = the wake signal (process lifecycle — that's all the harness watches).
-  - echo/cat = the message left on the doorstep, read only after the wake.
+  issue a task to run → it checks the json
+    → condition passes → stdout → exit 0; 
+    → condition fails → loops forever. 
+  On exit: 
+    (a) Claude picks it up, 
+    (b) issue another task to loop again.
 
-  If a script echoed but never exited, I'd never be woken — the text would just pile up in
-  the output file unseen. The exit is mandatory; the echo is optional convenience so I don't
-  have to re-read the file myself.
+  Right. Two refinements:
+
+  - (a) isn't "Claude sends messages to you" — I am the one woken. The harness sees the exit
+  and re-invokes me; I then read the stdout.
+  - (b) re-arming is a deliberate act by me, not automatic. When I wake, I read the output
+  and then explicitly launch another background watch. If I don't, monitoring simply stops
+  (no immortal loop behind the scenes).
+
+  And "exit 0" → really "exit (any code; use 0 by convention)." The wake fires on any termination.
+
+  So the corrected cycle:
+
+  I launch sentinel ──► sentinel loops (check json every 2s, holding prev)
+                            │ no change → loop (silent)
+                            │ change → stdout the payload → exit
+                            ▼
+              harness sees process exit ──► wakes ME
+                            ▼
+              I read stdout ──► I launch a NEW sentinel  ──┐
+                            ▲                              │
+                            └──────────────────────────────┘
 ```
