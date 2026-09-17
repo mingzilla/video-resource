@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function sync_rulesets_directory() {
-    PRIMARY_RULESETS_PATH="/mnt/e/code/github-release/video-resource/labels/AI04_shared-rules/__rulesets"
+    PRIMARY_RULESETS_PATH="/mnt/e/code/ghub/video-resource/labels/AI04_shared-rules/__rulesets"
     PROJECT_DIR="$(pwd)"
     RULESETS_TARGET_DIR="$PROJECT_DIR/__rulesets"
     

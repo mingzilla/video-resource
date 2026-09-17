@@ -2,7 +2,7 @@
 
 Session `d635fd8e-a6d3-4415-8f54-5ab64aadf2a0` — **86 API calls, 100 tool calls** (Bash ×88, Read ×9, Glob ×1, Write ×1, Edit ×1), 14 absorbed into parallel batches, 76/86 cache-hit, ~3580s. Comparison cost ≈ **$22.26** (Opus-4.5-equivalent: fresh×$5/M + cache×$0.5/M + out×$25/M). `rounds` = `length(result.json)` = **24**.
 
-> **Source correction.** The transcript is NOT in the output dir — it lives in the `claude -p` session store: `~/.claude/projects/-mnt-e-code-github-release-mvp-work--clean-context-investment-history/d635fd8e-….jsonl`. The prior `__old` report fed the parser `11274984__1A__output.jsonl` (a *data-output* file, `kind:"suppressed"/"round"`, zero `assistant`/`user` records) and so emitted 0 calls. The accelerator script is correct; it was pointed at the wrong file. `cli.json` is 0 bytes here and is not used.
+> **Source correction.** The transcript is NOT in the output dir — it lives in the `claude -p` session store: `~/.claude/projects/-mnt-e-code-ghub-mvp-work--clean-context-investment-history/d635fd8e-….jsonl`. The prior `__old` report fed the parser `11274984__1A__output.jsonl` (a *data-output* file, `kind:"suppressed"/"round"`, zero `assistant`/`user` records) and so emitted 0 calls. The accelerator script is correct; it was pointed at the wrong file. `cli.json` is 0 bytes here and is not used.
 
 ## Root cause — the run had to build its own skill
 

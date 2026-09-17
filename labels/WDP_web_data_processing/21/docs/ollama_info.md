@@ -1,5 +1,5 @@
 ```shell
-/mnt/e/code/github-release/mvp$ docker exec 55897a589c29 ollama show llama3.2:3b
+/mnt/e/code/ghub/mvp$ docker exec 55897a589c29 ollama show llama3.2:3b
   Model
     architecture        llama
     parameters          3.2B

@@ -5,7 +5,7 @@
 ### Output
 
 ```shell
-/mnt/e/code/github-release/mvp$ work/llm_fine_tuning/scripts_sh/ex_001__train/run.sh
+/mnt/e/code/ghub/mvp$ work/llm_fine_tuning/scripts_sh/ex_001__train/run.sh
 🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
 🦥 Unsloth Zoo will now patch everything to make training faster!
 ==((====))==  Unsloth 2026.3.4: Fast Llama patching. Transformers: 5.2.0.
@@ -67,9 +67,9 @@ Loss going down is the right direction. With 9 records there is almost no signal
 ### Output
 
 ```shell
-/mnt/e/code/github-release/mvp$ work/llm_fine_tuning/scripts_sh/ex_002__register_ollama/run.sh
-2026-03-17 03:44:39,120 - __main__ - INFO - Found GGUF: /mnt/e/code/github-release/mvp/work/llm_fine_tuning/_output/ex_001__train/gguf_gguf/llama-3.2-3b-instruct.Q4_K_M.gguf
-2026-03-17 03:44:39,120 - __main__ - INFO - $ /usr/bin/docker cp /mnt/e/code/github-release/mvp/work/llm_fine_tuning/_output/ex_001__train/gguf_gguf/llama-3.2-3b-instruct.Q4_K_M.gguf ollama-test:/tmp/llama-3.2-3b-instruct.Q4_K_M.gguf
+/mnt/e/code/ghub/mvp$ work/llm_fine_tuning/scripts_sh/ex_002__register_ollama/run.sh
+2026-03-17 03:44:39,120 - __main__ - INFO - Found GGUF: /mnt/e/code/ghub/mvp/work/llm_fine_tuning/_output/ex_001__train/gguf_gguf/llama-3.2-3b-instruct.Q4_K_M.gguf
+2026-03-17 03:44:39,120 - __main__ - INFO - $ /usr/bin/docker cp /mnt/e/code/ghub/mvp/work/llm_fine_tuning/_output/ex_001__train/gguf_gguf/llama-3.2-3b-instruct.Q4_K_M.gguf ollama-test:/tmp/llama-3.2-3b-instruct.Q4_K_M.gguf
 Successfully copied 2.02GB to ollama-test:/tmp/llama-3.2-3b-instruct.Q4_K_M.gguf
 2026-03-17 03:44:49,256 - __main__ - INFO - $ /usr/bin/docker cp /tmp/tmp8n72n9n9_Modelfile ollama-test:/tmp/Modelfile
 Successfully copied 2.05kB to ollama-test:/tmp/Modelfile
