@@ -37,7 +37,7 @@ Run `_all.sh` and every target is ready. A change to the template reaches every 
 
 ```yaml
 roots:                                    # absolute .claude/skills dirs that hold skill dirs
-  core: /abs/path/to/private_skills/core__unit_skills/.claude/skills
+  core: /abs/path/to/private_skills/skills__core
   ops: /abs/path/to/private_skills/.claude/skills
 
 links:                                    # skill names to link, grouped by root
